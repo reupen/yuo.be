@@ -84,7 +84,7 @@ const IPodManagerPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 1.2.0"
+          label="Version 0.7.1"
         />
       </UnorderedIconList>
 
