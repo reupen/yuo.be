@@ -12,7 +12,7 @@ const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
       latestPrereleaseVersion: file(
-        relativePath: { eq: "downloads/foo_ui_columns-1.3.0-beta.1.fb2k-component" }
+        relativePath: { eq: "downloads/foo_ui_columns-1.3.0-rc.1.fb2k-component" }
       ) {
         ...DownloadFile
       }
@@ -76,7 +76,7 @@ const ColumnsUIPage = ({ location }) => {
 
       <h4 className="title is-4">Latest pre-release version</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem file={data.latestPrereleaseVersion} label="Version 1.3.0 beta 1" />
+        <DownloadLinkListItem file={data.latestPrereleaseVersion} label="Version 1.3.0 RC 1" />
       </UnorderedIconList>
 
       <h4 className="title is-4">Latest stable version</h4>
