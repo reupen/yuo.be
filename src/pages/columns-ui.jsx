@@ -11,13 +11,8 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
-      latestPrereleaseVersion: file(
-        relativePath: { eq: "downloads/foo_ui_columns-1.3.0-rc.1.fb2k-component" }
-      ) {
-        ...DownloadFile
-      }
       latestVersion: file(
-        relativePath: { eq: "downloads/foo_ui_columns-1.2.0.fb2k-component" }
+        relativePath: { eq: "downloads/foo_ui_columns-1.3.0.fb2k-component" }
       ) {
         ...DownloadFile
       }
@@ -74,14 +69,9 @@ const ColumnsUIPage = ({ location }) => {
       </ul>
       <h3 className="title is-3">Downloads</h3>
 
-      <h4 className="title is-4">Latest pre-release version</h4>
+      <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem file={data.latestPrereleaseVersion} label="Version 1.3.0 RC 1" />
-      </UnorderedIconList>
-
-      <h4 className="title is-4">Latest stable version</h4>
-      <UnorderedIconList>
-        <DownloadLinkListItem file={data.latestVersion} label="Version 1.2.0" />
+        <DownloadLinkListItem file={data.latestVersion} label="Version 1.3.0" />
       </UnorderedIconList>
       <p>
         If you’re upgrading from a pre-1.0.0 version,{" "}
