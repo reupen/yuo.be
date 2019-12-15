@@ -65,7 +65,7 @@ const ColumnsUIPage = ({ location }) => {
       <h3 className="title is-3">Requirements</h3>
       <ul>
         <li>Windows 7 Service Pack 1 or later</li>
-        <li>foobar2000 1.3 or newer</li>
+        <li>foobar2000 1.4 or newer</li>
       </ul>
       <h3 className="title is-3">Downloads</h3>
 
