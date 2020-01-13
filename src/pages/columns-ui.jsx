@@ -11,6 +11,13 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
+      preReleaseVersion: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-1.4.0-beta.1.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       latestVersion: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.3.0.fb2k-component" }
       ) {
@@ -69,7 +76,20 @@ const ColumnsUIPage = ({ location }) => {
       </ul>
       <h3 className="title is-3">Downloads</h3>
 
-      <h4 className="title is-4">Latest version</h4>
+      <h4 className="title is-4">Latest pre-release version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={data.preReleaseVersion}
+          label="Version 1.4.0 beta 1"
+        />
+      </UnorderedIconList>
+      <p>
+        <a href="https://github.com/reupen/columns_ui/releases/tag/v1.4.0-beta.1">
+          Read the release notes before updating.
+        </a>{" "}
+      </p>
+
+      <h4 className="title is-4">Latest stable version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem file={data.latestVersion} label="Version 1.3.0" />
       </UnorderedIconList>
