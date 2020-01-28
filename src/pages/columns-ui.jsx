@@ -13,7 +13,7 @@ const ColumnsUIPage = ({ location }) => {
     query {
       preReleaseVersion: file(
         relativePath: {
-          eq: "downloads/foo_ui_columns-1.4.0-beta.1.fb2k-component"
+          eq: "downloads/foo_ui_columns-1.4.0-rc.1.fb2k-component"
         }
       ) {
         ...DownloadFile
@@ -80,11 +80,11 @@ const ColumnsUIPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={data.preReleaseVersion}
-          label="Version 1.4.0 beta 1"
+          label="Version 1.4.0 RC 1"
         />
       </UnorderedIconList>
       <p>
-        <a href="https://github.com/reupen/columns_ui/releases/tag/v1.4.0-beta.1">
+        <a href="https://github.com/reupen/columns_ui/releases">
           Read the release notes before updating.
         </a>{" "}
       </p>
