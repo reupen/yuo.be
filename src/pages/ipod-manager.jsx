@@ -11,6 +11,11 @@ const IPodManagerPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
+        relativePath: { eq: "downloads/foo_dop-0.7.2.fb2k-component" }
+      ) {
+        ...DownloadFile
+      }
+      previousVersion: file(
         relativePath: { eq: "downloads/foo_dop-0.7.1.fb2k-component" }
       ) {
         ...DownloadFile
@@ -67,7 +72,7 @@ const IPodManagerPage = ({ location }) => {
       <h3 className="title is-3">Requirements</h3>
       <ul>
         <li>Windows 7 or newer</li>
-        <li>foobar2000 1.3 or newer</li>
+        <li>foobar2000 1.4 or newer</li>
         <li>
           <a href="https://wiki.yuo.be/dop:start#supported_models">
             a supported iPod model
@@ -79,11 +84,21 @@ const IPodManagerPage = ({ location }) => {
           </a>
         </li>
       </ul>
+
       <h3 className="title is-3">Downloads</h3>
+
       <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
+          label="Version 0.7.2"
+        />
+      </UnorderedIconList>
+
+      <h4 className="title is-4">Previous version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={files.previousVersion}
           label="Version 0.7.1"
         />
       </UnorderedIconList>
