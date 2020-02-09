@@ -11,6 +11,11 @@ const ConsolePanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
+        relativePath: { eq: "downloads/foo_uie_console-1.0.0.fb2k-component" }
+      ) {
+        ...DownloadFile
+      }
+      previousVersion: file(
         relativePath: { eq: "downloads/foo_uie_console-0.5.0.fb2k-component" }
       ) {
         ...DownloadFile
@@ -34,10 +39,19 @@ const ConsolePanelPage = ({ location }) => {
       <p>Console panel is a console viewer for Columns UI.</p>
 
       <h3 className="title is-3">Downloads</h3>
+
       <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
+          label="Version 1.0.0"
+        />
+      </UnorderedIconList>
+
+      <h4 className="title is-4">Previous version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={files.previousVersion}
           label="Version 0.5.0"
         />
       </UnorderedIconList>
