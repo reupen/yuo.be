@@ -11,19 +11,19 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
-      preReleaseVersion: file(
+      latestVersion: file(
         relativePath: {
-          eq: "downloads/foo_ui_columns-1.4.0-rc.1.fb2k-component"
+          eq: "downloads/foo_ui_columns-1.4.0.fb2k-component"
         }
       ) {
         ...DownloadFile
       }
-      latestVersion: file(
+      oldVersion130: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.3.0.fb2k-component" }
       ) {
         ...DownloadFile
       }
-      oldVersion: file(
+      oldVersion051: file(
         relativePath: { eq: "downloads/foo_ui_columns-0.5.1.fb2k-component" }
       ) {
         ...DownloadFile
@@ -76,11 +76,11 @@ const ColumnsUIPage = ({ location }) => {
       </ul>
       <h3 className="title is-3">Downloads</h3>
 
-      <h4 className="title is-4">Latest pre-release version</h4>
+      <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={data.preReleaseVersion}
-          label="Version 1.4.0 RC 1"
+          file={data.latestVersion}
+          label="Version 1.4.0"
         />
       </UnorderedIconList>
       <p>
@@ -89,22 +89,11 @@ const ColumnsUIPage = ({ location }) => {
         </a>{" "}
       </p>
 
-      <h4 className="title is-4">Latest stable version</h4>
-      <UnorderedIconList>
-        <DownloadLinkListItem file={data.latestVersion} label="Version 1.3.0" />
-      </UnorderedIconList>
-      <p>
-        If you’re upgrading from a pre-1.0.0 version,{" "}
-        <a href="https://github.com/reupen/columns_ui/releases/tag/v1.0.0-alpha.1">
-          read the release notes for 1.0.0 before updating
-        </a>
-        .
-      </p>
-
       <h4 className="title is-4">Older versions</h4>
       <UnorderedIconList>
+        <DownloadLinkListItem file={data.oldVersion130} label="Version 1.3.0" />
         <>
-          <DownloadLinkListItem file={data.oldVersion} label="Version 0.5.1" />{" "}
+          <DownloadLinkListItem file={data.oldVersion051} label="Version 0.5.1" />{" "}
           – the last version compatible with Windows XP
         </>
       </UnorderedIconList>
