@@ -11,13 +11,16 @@ const AlbumListPanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
-        relativePath: {
-          eq: "downloads/foo_uie_albumlist-0.4.0-beta.5.fb2k-component"
-        }
+        relativePath: { eq: "downloads/foo_uie_albumlist-0.4.0-beta.6.fb2k-component" }
       ) {
         ...DownloadFile
       }
-      oldVersion: file(
+      version040b5: file(
+        relativePath: { eq: "downloads/foo_uie_albumlist-0.4.0-beta.5.fb2k-component" }
+      ) {
+        ...DownloadFile
+      }
+      version037: file(
         relativePath: { eq: "downloads/foo_uie_albumlist-0.3.7.fb2k-component" }
       ) {
         ...DownloadFile
@@ -49,13 +52,14 @@ const AlbumListPanelPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 0.4.0 beta 5"
+          label="Version 0.4.0 beta 6"
         />
       </UnorderedIconList>
 
       <h4 className="title is-4">Older versions</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem file={files.oldVersion} label="Version 0.3.7" />
+        <DownloadLinkListItem file={files.version040b5} label="Version 0.4.0 beta 5" />
+        <DownloadLinkListItem file={files.version037} label="Version 0.3.7" />
       </UnorderedIconList>
 
       <h3 className="title is-3">Links</h3>
