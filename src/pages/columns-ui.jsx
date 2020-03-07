@@ -12,9 +12,7 @@ const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
       latestVersion: file(
-        relativePath: {
-          eq: "downloads/foo_ui_columns-1.4.0.fb2k-component"
-        }
+        relativePath: { eq: "downloads/foo_ui_columns-1.4.0.fb2k-component" }
       ) {
         ...DownloadFile
       }
@@ -78,10 +76,7 @@ const ColumnsUIPage = ({ location }) => {
 
       <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem
-          file={data.latestVersion}
-          label="Version 1.4.0"
-        />
+        <DownloadLinkListItem file={data.latestVersion} label="Version 1.4.0" />
       </UnorderedIconList>
       <p>
         <a href="https://github.com/reupen/columns_ui/releases">
@@ -93,7 +88,10 @@ const ColumnsUIPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem file={data.oldVersion130} label="Version 1.3.0" />
         <>
-          <DownloadLinkListItem file={data.oldVersion051} label="Version 0.5.1" />{" "}
+          <DownloadLinkListItem
+            file={data.oldVersion051}
+            label="Version 0.5.1"
+          />{" "}
           – the last version compatible with Windows XP
         </>
       </UnorderedIconList>
