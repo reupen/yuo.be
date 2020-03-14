@@ -12,7 +12,7 @@ const AlbumListPanelPage = ({ location }) => {
     query {
       latestVersion: file(
         relativePath: {
-          eq: "downloads/foo_uie_albumlist-0.4.0-beta.6.fb2k-component"
+          eq: "downloads/foo_uie_albumlist-0.4.0-beta.7.fb2k-component"
         }
       ) {
         ...DownloadFile
@@ -56,7 +56,7 @@ const AlbumListPanelPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 0.4.0 beta 6"
+          label="Version 0.4.0 beta 7"
         />
       </UnorderedIconList>
 
