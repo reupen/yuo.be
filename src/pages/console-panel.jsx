@@ -11,7 +11,7 @@ const ConsolePanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
-        relativePath: { eq: "downloads/foo_uie_console-1.0.0.fb2k-component" }
+        relativePath: { eq: "downloads/foo_uie_console-1.0.1.fb2k-component" }
       ) {
         ...DownloadFile
       }
@@ -44,7 +44,7 @@ const ConsolePanelPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 1.0.0"
+          label="Version 1.0.1"
         />
       </UnorderedIconList>
 
