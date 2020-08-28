@@ -18,7 +18,7 @@ If you don’t have a licence for Font Awesome Pro, you can replace the `@fortaw
 
 To build the site:
 
-1. Install [Node.js 10](https://nodejs.org/en/)
+1. Install [Node.js](https://nodejs.org/en/)
 1. [Configure Font Awesome Pro credentials](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers)
 1. Run `npm install`
 1. Run `npx gatsby clean`
