@@ -12,14 +12,14 @@ const AlbumListPanelPage = ({ location }) => {
     query {
       latestVersion: file(
         relativePath: {
-          eq: "downloads/foo_uie_albumlist-0.4.0-beta.7.fb2k-component"
+          eq: "downloads/foo_uie_albumlist-0.4.0.fb2k-component"
         }
       ) {
         ...DownloadFile
       }
-      version040b5: file(
+      version040b7: file(
         relativePath: {
-          eq: "downloads/foo_uie_albumlist-0.4.0-beta.5.fb2k-component"
+          eq: "downloads/foo_uie_albumlist-0.4.0-beta.7.fb2k-component"
         }
       ) {
         ...DownloadFile
@@ -56,15 +56,15 @@ const AlbumListPanelPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 0.4.0 beta 7"
+          label="Version 0.4.0"
         />
       </UnorderedIconList>
 
       <h4 className="title is-4">Older versions</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={files.version040b5}
-          label="Version 0.4.0 beta 5"
+          file={files.version040b7}
+          label="Version 0.4.0 beta 7"
         />
         <DownloadLinkListItem file={files.version037} label="Version 0.3.7" />
       </UnorderedIconList>
