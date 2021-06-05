@@ -12,9 +12,9 @@ The site was built using [Gatsby](https://www.gatsbyjs.org/) and uses [React](ht
 
 ## Building the site
 
-The site uses [Font Awesome Pro](https://fontawesome.com/pro) and [credentials must be configured to install it](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers).
+The site uses [Font Awesome 5 Pro](https://fontawesome.com/pro) via the private package `@reupen/fontawesome-pro`.
 
-If you don’t have a licence for Font Awesome Pro, you can replace the `@fortawesome/fontawesome-pro` dependency with `@fortawesome/fontawesome-free` (updating imports too), but some icons will be missing.
+You’ll need to replace references to that package with an alternative source for Font Awesome 5 Pro, or, alternatively, the free version `@fortawesome/fontawesome-free` can be used (but some icons will be missing).
 
 To build the site:
 
