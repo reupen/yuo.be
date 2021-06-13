@@ -11,9 +11,7 @@ const AlbumListPanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
-        relativePath: {
-          eq: "downloads/foo_uie_albumlist-0.4.1.fb2k-component"
-        }
+        relativePath: { eq: "downloads/foo_uie_albumlist-0.4.1.fb2k-component" }
       ) {
         ...DownloadFile
       }

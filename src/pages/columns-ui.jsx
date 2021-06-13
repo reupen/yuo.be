@@ -10,7 +10,7 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       latestVersion: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.6.0.fb2k-component" }
       ) {
@@ -33,9 +33,12 @@ const ColumnsUIPage = ({ location }) => {
       }
       screenshot: file(relativePath: { eq: "images/columns-ui.png" }) {
         childImageSharp {
-          fixed(width: 300, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
-          }
+          gatsbyImageData(
+            width: 300
+            quality: 100
+            placeholder: TRACED_SVG
+            layout: FIXED
+          )
         }
         publicURL
       }

@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const FixedImage = ({ image }) => {
   return (
     <div style={{ marginBottom: "1em" }}>
       <a href={image.publicURL}>
-        <Img fixed={image.childImageSharp.fixed} />
+        <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
       </a>
     </div>
   )
