@@ -11,6 +11,13 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
+      prereleaseVersion: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-1.7.0-beta.1.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       latestVersion: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.6.0.fb2k-component" }
       ) {
@@ -81,6 +88,14 @@ const ColumnsUIPage = ({ location }) => {
         <li>foobar2000 1.4 or newer</li>
       </ul>
       <h3 className="title is-3">Downloads</h3>
+
+      <h4 className="title is-4">Latest pre-release version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={data.prereleaseVersion}
+          label="Version 1.7.0 beta 1"
+        />
+      </UnorderedIconList>
 
       <h4 className="title is-4">Latest version</h4>
       <UnorderedIconList>
