@@ -11,11 +11,16 @@ const ConsolePanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
+        relativePath: { eq: "downloads/foo_uie_console-2.0.0.fb2k-component" }
+      ) {
+        ...DownloadFile
+      }
+      previousVersion101: file(
         relativePath: { eq: "downloads/foo_uie_console-1.0.1.fb2k-component" }
       ) {
         ...DownloadFile
       }
-      previousVersion: file(
+      previousVersion050: file(
         relativePath: { eq: "downloads/foo_uie_console-0.5.0.fb2k-component" }
       ) {
         ...DownloadFile
@@ -44,14 +49,18 @@ const ConsolePanelPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 1.0.1"
+          label="Version 2.0.0"
         />
       </UnorderedIconList>
 
-      <h4 className="title is-4">Previous version</h4>
+      <h4 className="title is-4">Previous versions</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={files.previousVersion}
+          file={files.previousVersion101}
+          label="Version 1.0.1"
+        />
+        <DownloadLinkListItem
+          file={files.previousVersion050}
           label="Version 0.5.0"
         />
       </UnorderedIconList>
@@ -61,6 +70,10 @@ const ConsolePanelPage = ({ location }) => {
         <ExternalLinkListItem
           href={`https://github.com/reupen/${repo}`}
           label="GitHub project"
+        />
+        <ExternalLinkListItem
+          href={`https://github.com/reupen/${repo}/releases`}
+          label="Release notes"
         />
       </UnorderedIconList>
     </Layout>
