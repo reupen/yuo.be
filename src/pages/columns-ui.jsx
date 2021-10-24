@@ -13,13 +13,20 @@ const ColumnsUIPage = ({ location }) => {
     {
       prereleaseVersion: file(
         relativePath: {
-          eq: "downloads/foo_ui_columns-1.7.0-beta.1.fb2k-component"
+          eq: "downloads/foo_ui_columns-1.7.0-beta.2.fb2k-component"
         }
       ) {
         ...DownloadFile
       }
       latestVersion: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.6.0.fb2k-component" }
+      ) {
+        ...DownloadFile
+      }
+      oldVersion170b1: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-1.7.0-beta.1.fb2k-component"
+        }
       ) {
         ...DownloadFile
       }
@@ -93,11 +100,11 @@ const ColumnsUIPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={data.prereleaseVersion}
-          label="Version 1.7.0 beta 1"
+          label="Version 1.7.0 beta 2"
         />
       </UnorderedIconList>
 
-      <h4 className="title is-4">Latest version</h4>
+      <h4 className="title is-4">Latest stable version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem file={data.latestVersion} label="Version 1.6.0" />
       </UnorderedIconList>
@@ -109,6 +116,10 @@ const ColumnsUIPage = ({ location }) => {
 
       <h4 className="title is-4">Older versions</h4>
       <UnorderedIconList>
+        <DownloadLinkListItem
+          file={data.oldVersion170b1}
+          label="Version 1.7.0 beta 1"
+        />
         <DownloadLinkListItem file={data.oldVersion141} label="Version 1.4.1" />
         <DownloadLinkListItem file={data.oldVersion130} label="Version 1.3.0" />
         <>
