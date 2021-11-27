@@ -3,7 +3,7 @@
   "private": true,
   "description": "yuo.be website",
   "version": "0.1.0",
-  "author": "Reupen SHah",
+  "author": "Reupen Shah",
   "dependencies": {
     "@reupen/fontawesome-pro": "^5.15.3",
     "bulma": "^0.9.3",
@@ -31,7 +31,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
