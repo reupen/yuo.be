@@ -8,9 +8,31 @@ import UnorderedIconList from "../components/UnorderedIconList"
 import GitHubStars from "../components/GitHubStars"
 import ExternalLinkListItem from "../components/ExternalLinkListItem"
 
+const Screenshots = ({ children }) => (
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, 300px)",
+      gridAutoRows: "auto",
+      rowGap: "10px",
+      columnGap: "10px",
+      marginBottom: "16px",
+    }}
+  >
+    {children}
+  </div>
+)
+
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
+      v200a1: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-2.0.0-alpha.1.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       latestVersion: file(
         relativePath: { eq: "downloads/foo_ui_columns-1.7.0.fb2k-component" }
       ) {
@@ -36,17 +58,26 @@ const ColumnsUIPage = ({ location }) => {
       ) {
         ...DownloadFile
       }
-      screenshot: file(relativePath: { eq: "images/columns-ui.png" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 300
-            quality: 100
-            placeholder: TRACED_SVG
-            layout: FIXED
-          )
-        }
-        publicURL
+      lightScreenshot: file(
+        relativePath: { eq: "images/columns-ui-light.png" }
+      ) {
+        ...Screenshot
       }
+      darkScreenshot: file(relativePath: { eq: "images/columns-ui-dark.png" }) {
+        ...Screenshot
+      }
+    }
+
+    fragment Screenshot on File {
+      childImageSharp {
+        gatsbyImageData(
+          width: 300
+          quality: 100
+          placeholder: TRACED_SVG
+          layout: FIXED
+        )
+      }
+      publicURL
     }
   `)
 
@@ -64,10 +95,20 @@ const ColumnsUIPage = ({ location }) => {
       <p>
         <GitHubStars repo={repo} />
       </p>
-      <FixedImage image={data.screenshot} />
+      <Screenshots>
+        <FixedImage
+          image={data.darkScreenshot}
+          title="Columns UI in dark mode"
+        />
+        <FixedImage
+          image={data.lightScreenshot}
+          title="Columns UI in light mode"
+        />
+      </Screenshots>
       <p>Columns UI is a user interface for the foobar2000 audio player.</p>
       <p>Features include:</p>
       <ul>
+        <li>a dark mode on Windows 10 and 11</li>
         <li>
           a playlist view with grouping, artwork and in-line metadata editing
         </li>
@@ -83,9 +124,17 @@ const ColumnsUIPage = ({ location }) => {
       <h3 className="title is-3">Requirements</h3>
       <ul>
         <li>Windows 7 Service Pack 1 or later</li>
-        <li>foobar2000 1.4 or newer</li>
+        <li>foobar2000 1.5 or newer</li>
       </ul>
       <h3 className="title is-3">Downloads</h3>
+
+      <h4 className="title is-4">Latest pre-release version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={data.v200a1}
+          label="Version 2.0.0 alpha 1"
+        />
+      </UnorderedIconList>
 
       <h4 className="title is-4">Latest stable version</h4>
       <UnorderedIconList>

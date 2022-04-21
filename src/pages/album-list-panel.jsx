@@ -10,6 +10,13 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const AlbumListPanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
+      version100b1: file(
+        relativePath: {
+          eq: "downloads/foo_uie_albumlist-1.0.0-beta.1.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       version042: file(
         relativePath: { eq: "downloads/foo_uie_albumlist-0.4.2.fb2k-component" }
       ) {
@@ -55,20 +62,23 @@ const AlbumListPanelPage = ({ location }) => {
       </p>
 
       <h3 className="title is-3">Downloads</h3>
-      <h4 className="title is-4">Latest version</h4>
+
+      <h4 className="title is-4">Latest pre-release version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={files.version042}
-          label="Version 0.4.2"
+          file={files.version100b1}
+          label="Version 1.0.0 beta 1"
         />
+      </UnorderedIconList>
+
+      <h4 className="title is-4">Latest stable version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem file={files.version042} label="Version 0.4.2" />
       </UnorderedIconList>
 
       <h4 className="title is-4">Older versions</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem
-          file={files.version041}
-          label="Version 0.4.1"
-        />
+        <DownloadLinkListItem file={files.version041} label="Version 0.4.1" />
         <DownloadLinkListItem
           file={files.version040b7}
           label="Version 0.4.0 beta 7"

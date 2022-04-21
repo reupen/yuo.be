@@ -10,6 +10,13 @@ import ExternalLinkListItem from "../components/ExternalLinkListItem"
 const ConsolePanelPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
+      v300b1: file(
+        relativePath: {
+          eq: "downloads/foo_uie_console-3.0.0-beta.1.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       latestVersion: file(
         relativePath: { eq: "downloads/foo_uie_console-2.0.0.fb2k-component" }
       ) {
@@ -45,7 +52,15 @@ const ConsolePanelPage = ({ location }) => {
 
       <h3 className="title is-3">Downloads</h3>
 
-      <h4 className="title is-4">Latest version</h4>
+      <h4 className="title is-4">Latest pre-release version</h4>
+      <UnorderedIconList>
+        <DownloadLinkListItem
+          file={files.v300b1}
+          label="Version 3.0.0 beta 1"
+        />
+      </UnorderedIconList>
+
+      <h4 className="title is-4">Latest stable version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}

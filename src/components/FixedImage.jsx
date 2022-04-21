@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const FixedImage = ({ image }) => {
+const FixedImage = ({ image, title }) => {
   return (
-    <div style={{ marginBottom: "1em" }}>
-      <a href={image.publicURL}>
+    <div>
+      <a href={image.publicURL} title={title}>
         <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
       </a>
     </div>
@@ -14,6 +14,7 @@ const FixedImage = ({ image }) => {
 
 FixedImage.propTypes = {
   image: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default FixedImage
