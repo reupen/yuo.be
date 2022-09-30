@@ -26,6 +26,13 @@ const Screenshots = ({ children }) => (
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
+      v200a2: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-2.0.0-alpha.2.x86-x64.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       v200a1: file(
         relativePath: {
           eq: "downloads/foo_ui_columns-2.0.0-alpha.1.fb2k-component"
@@ -131,8 +138,8 @@ const ColumnsUIPage = ({ location }) => {
       <h4 className="title is-4">Latest pre-release version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={data.v200a1}
-          label="Version 2.0.0 alpha 1"
+          file={data.v200a2}
+          label="Version 2.0.0 alpha 2"
         />
       </UnorderedIconList>
 
@@ -146,8 +153,12 @@ const ColumnsUIPage = ({ location }) => {
         </a>
       </p>
 
-      <h4 className="title is-4">Older versions</h4>
+      <h4 className="title is-4">Previous versions</h4>
       <UnorderedIconList>
+        <DownloadLinkListItem
+          file={data.v200a2}
+          label="Version 2.0.0 alpha 1"
+        />
         <DownloadLinkListItem file={data.oldVersion160} label="Version 1.6.0" />
         <DownloadLinkListItem file={data.oldVersion141} label="Version 1.4.1" />
         <DownloadLinkListItem file={data.oldVersion130} label="Version 1.3.0" />
@@ -175,7 +186,7 @@ const ColumnsUIPage = ({ location }) => {
           label="Frequently asked questions"
         />
         <ExternalLinkListItem
-          href="http://www.hydrogenaudio.org/forums/index.php?showtopic=28647"
+          href="https://www.hydrogenaudio.org/forums/index.php?showtopic=28647"
           label="Discussion at the foobar2000 forums"
         />
       </UnorderedIconList>

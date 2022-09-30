@@ -11,7 +11,7 @@ const ColumnsUISDKPage = ({ location }) => {
   const files = useStaticQuery(graphql`
     query {
       latestVersion: file(
-        relativePath: { eq: "downloads/columns_ui-sdk-7.0.0-beta.1.7z" }
+        relativePath: { eq: "downloads/columns_ui-sdk-7.0.0-beta.2.7z" }
       ) {
         ...DownloadFile
       }
@@ -42,7 +42,7 @@ const ColumnsUISDKPage = ({ location }) => {
       <UnorderedIconList>
         <DownloadLinkListItem
           file={files.latestVersion}
-          label="Version 7.0.0 beta 1"
+          label="Version 7.0.0 beta 2"
         />
       </UnorderedIconList>
 
