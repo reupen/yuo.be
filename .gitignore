@@ -104,3 +104,4 @@ public
 
 # JetBrains
 .idea/
+.vercel

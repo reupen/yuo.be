@@ -1,0 +1,61 @@
+{
+  "redirects": [
+    {
+      "source": "/wiki",
+      "destination": "https://wiki.yuo.be",
+      "permanent": true
+    },
+    {
+      "source": "/columns.php",
+      "destination": "/columns-ui",
+      "permanent": true
+    },
+    {
+      "source": "/columns_ui",
+      "destination": "/columns-ui",
+      "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ipod_manager",
+      "destination": "/ipod-manager",
+      "permanent": true
+    },
+    {
+      "source": "/contact.php",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/columns_ui-sdk-documentation",
+      "destination": "https://columns-ui-sdk.readthedocs.io",
+      "permanent": true
+    },
+    {
+      "source": "/r/reqs",
+      "destination": "https://wiki.yuo.be/columns_ui%3Arequests%3Arequests_list"
+    },
+    {
+      "source": "/r/faqs",
+      "destination": "https://wiki.yuo.be/columns_ui%3Afaqs"
+    },
+    {
+      "source": "/r/cuiprefs",
+      "destination": "https://wiki.yuo.be/columns_ui%3Amanual"
+    },
+    {
+      "source": "/r/afcto",
+      "destination": "https://wiki.yuo.be/dop%3Astart#afcto"
+    },
+    {
+      "source": "/wiki/:path*",
+      "destination": "https://wiki.yuo.be/:path*",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false
+}
