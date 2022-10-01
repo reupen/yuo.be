@@ -1,0 +1,16 @@
+/wiki https://wiki.yuo.be 301
+/columns.php /columns-ui 301
+/columns_ui /columns-ui 301
+/index.php / 301
+/ipod.php /ipod-manager 301
+/ipod_manager /ipod-manager 301
+/contact.php /contact 301
+/columns_ui-sdk-documentation https://columns-ui-sdk.readthedocs.io 301
+/r/reqs https://wiki.yuo.be/columns_ui:requests:requests_list 302
+/r/faqs https://wiki.yuo.be/columns_ui:faqs 302
+/r/cuiprefs https://wiki.yuo.be/columns_ui:manual 302
+/r/afcto https://wiki.yuo.be/dop:start#afcto 302
+
+/wiki/* https://wiki.yuo.be/:splat
+/*/ /:splat 301
+/*/index.html /:splat 301
