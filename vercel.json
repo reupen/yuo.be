@@ -1,4 +1,15 @@
 {
+  "headers": [
+    {
+      "source": "/:path*\\.fb2k-component",
+      "headers": [
+        {
+          "key": "content-type",
+          "value": "application/x-foobar2000-component"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/wiki",
