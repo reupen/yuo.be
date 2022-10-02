@@ -26,9 +26,9 @@ const Screenshots = ({ children }) => (
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
-      v200a2: file(
+      v200a3: file(
         relativePath: {
-          eq: "downloads/foo_ui_columns-2.0.0-alpha.2.x86-x64.fb2k-component"
+          eq: "downloads/foo_ui_columns-2.0.0-alpha.3.x86-x64.fb2k-component"
         }
       ) {
         ...DownloadFile
@@ -138,8 +138,8 @@ const ColumnsUIPage = ({ location }) => {
       <h4 className="title is-4">Latest pre-release version</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={data.v200a2}
-          label="Version 2.0.0 alpha 2"
+          file={data.v200a3}
+          label="Version 2.0.0 alpha 3"
         />
       </UnorderedIconList>
 
@@ -156,7 +156,7 @@ const ColumnsUIPage = ({ location }) => {
       <h4 className="title is-4">Previous versions</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={data.v200a2}
+          file={data.v200a1}
           label="Version 2.0.0 alpha 1"
         />
         <DownloadLinkListItem file={data.oldVersion160} label="Version 1.6.0" />
