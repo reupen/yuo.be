@@ -41,6 +41,11 @@ const Menu = ({ pathname }) => (
         title="Typefind panel"
       />
       <InternalMenuItem
+        path="/svg-services"
+        currentPathName={pathname}
+        title="SVG services"
+      />
+      <InternalMenuItem
         path="/ipod-manager"
         currentPathName={pathname}
         title="iPod manager"
