@@ -26,30 +26,16 @@ const Screenshots = ({ children }) => (
 const ColumnsUIPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     {
+      v200b1: file(
+        relativePath: {
+          eq: "downloads/foo_ui_columns-2.0.0-beta.1.x86-x64.fb2k-component"
+        }
+      ) {
+        ...DownloadFile
+      }
       v200a5: file(
         relativePath: {
           eq: "downloads/foo_ui_columns-2.0.0-alpha.5.x86-x64.fb2k-component"
-        }
-      ) {
-        ...DownloadFile
-      }
-      v200a4: file(
-        relativePath: {
-          eq: "downloads/foo_ui_columns-2.0.0-alpha.4.x86-x64.fb2k-component"
-        }
-      ) {
-        ...DownloadFile
-      }
-      v200a3: file(
-        relativePath: {
-          eq: "downloads/foo_ui_columns-2.0.0-alpha.3.x86-x64.fb2k-component"
-        }
-      ) {
-        ...DownloadFile
-      }
-      v200a1: file(
-        relativePath: {
-          eq: "downloads/foo_ui_columns-2.0.0-alpha.1.fb2k-component"
         }
       ) {
         ...DownloadFile
@@ -151,10 +137,7 @@ const ColumnsUIPage = ({ location }) => {
 
       <h4 className="title is-4">Latest pre-release version</h4>
       <UnorderedIconList>
-        <DownloadLinkListItem
-          file={data.v200a5}
-          label="Version 2.0.0 alpha 5"
-        />
+        <DownloadLinkListItem file={data.v200b1} label="Version 2.0.0 beta 1" />
       </UnorderedIconList>
 
       <h4 className="title is-4">Latest stable version</h4>
@@ -170,16 +153,8 @@ const ColumnsUIPage = ({ location }) => {
       <h4 className="title is-4">Previous versions</h4>
       <UnorderedIconList>
         <DownloadLinkListItem
-          file={data.v200a4}
-          label="Version 2.0.0 alpha 4"
-        />
-        <DownloadLinkListItem
-          file={data.v200a3}
-          label="Version 2.0.0 alpha 3"
-        />
-        <DownloadLinkListItem
-          file={data.v200a1}
-          label="Version 2.0.0 alpha 1"
+          file={data.v200a5}
+          label="Version 2.0.0 alpha 5"
         />
         <DownloadLinkListItem file={data.oldVersion160} label="Version 1.6.0" />
         <DownloadLinkListItem file={data.oldVersion141} label="Version 1.4.1" />
