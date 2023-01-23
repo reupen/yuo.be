@@ -1,0 +1,99 @@
+---
+import DownloadLayout from "../layouts/DownloadLayout.astro"
+import { DownloadList, DownloadListItem } from "../components"
+
+const title = "iPod manager"
+const description =
+  "iPod manager – iPod management component for the foobar2000 audio player"
+const repo = "ipod_manager"
+---
+
+<DownloadLayout
+  title={title}
+  metaDescription={description}
+  repo={repo}
+  links={[
+    {
+      href: `https://github.com/reupen/${repo}/releases`,
+      label: "Release notes",
+    },
+    {
+      href: "https://wiki.yuo.be/dop:start",
+      label: "Documentation",
+    },
+    {
+      href: "https://wiki.yuo.be/dop:notes",
+      label: "Usage notes",
+    },
+    {
+      href: `https://github.com/reupen/${repo}/blob/master/CHANGELOG.md`,
+      label: "Change log",
+    },
+    {
+      href: "https://hydrogenaud.io/index.php/topic,45160.0.html",
+      label: "Discussion at the foobar2000 forums",
+    },
+  ]}
+>
+  <div class="notification is-warning">
+    <p>
+      <strong>Notice about iOS support</strong>
+    </p>
+    <p>Sync and other write commands are not supported on iOS 5 and newer.</p>
+    <p>
+      Additionally, iOS device users on 64-bit Windows must use{" "}
+      <a
+        href="https://support.apple.com/kb/DL1816"
+        referrerPolicy="no-referrer"
+      >
+        this version of iTunes
+      </a>
+      .
+    </p>
+  </div>
+
+  <p>
+    iPod manager allows you to transfer music to Apple iPods from foobar2000.
+  </p>
+  <p>Features include:</p>
+  <ul>
+    <li>artwork support</li>
+    <li>ReplayGain to SoundCheck conversion</li>
+    <li>gapless playback support</li>
+    <li>automatic conversion of unsupported audio formats</li>
+    <li>smart playlist creation</li>
+  </ul>
+  <h3 class="title is-3">Requirements</h3>
+  <ul>
+    <li>Windows 7 or newer</li>
+    <li>foobar2000 1.4 or newer</li>
+    <li>
+      <a href="https://wiki.yuo.be/dop:start#supported_models">
+        a supported iPod model
+      </a>
+    </li>
+    <li>
+      <a href="https://wiki.yuo.be/dop:start#requirements">
+        additional requirements apply for some models
+      </a>
+    </li>
+  </ul>
+
+  <h3 class="title is-3">Downloads</h3>
+
+  <h4 class="title is-4">Latest version</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_dop-0.7.2.fb2k-component"
+      label="Version 0.7.2"
+    />
+  </DownloadList>
+
+  <h4 class="title is-4">Previous versions</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_dop-0.7.1.fb2k-component"
+      label="Version 0.7.1"
+    />
+  </DownloadList>
+</DownloadLayout>

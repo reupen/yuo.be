@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run build",
+  "framework": "astro",
   "headers": [
     {
       "source": "/:path*\\.fb2k-component",
@@ -10,6 +12,9 @@
       ]
     }
   ],
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
+  "public": true,
   "redirects": [
     {
       "source": "/wiki",

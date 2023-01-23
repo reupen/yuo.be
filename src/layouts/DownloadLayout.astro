@@ -1,0 +1,34 @@
+---
+import Layout from "./Layout.astro"
+import {
+  DownloadListItem,
+  ExternalLinkList,
+  ExternalLinkListItem,
+  GitHubStars,
+} from "../components"
+
+export interface Props {
+  title: string
+  metaDescription: string
+  repo: string
+  links: { href: string; label: string }[]
+}
+
+const { title, metaDescription, repo, links = [] } = Astro.props
+---
+
+<Layout title={title} description={metaDescription}>
+  <p>
+    <GitHubStars repo={repo} />
+  </p>
+
+  <slot />
+
+  <h3 class="title is-3">Links</h3>
+  <ExternalLinkList
+    links={[
+      { href: `https://github.com/reupen/${repo}`, label: "GitHub repository" },
+      ...links,
+    ]}
+  />
+</Layout>

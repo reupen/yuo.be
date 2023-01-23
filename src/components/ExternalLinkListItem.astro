@@ -1,0 +1,14 @@
+---
+export interface Props {
+  href: string
+  label: string
+}
+
+const { href, label } = Astro.props
+
+import IconLinkListItem from "./IconLinkListItem.astro"
+---
+
+<IconLinkListItem href={href} iconClass="fas fa-external-link">
+  {label}
+</IconLinkListItem>

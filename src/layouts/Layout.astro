@@ -1,0 +1,55 @@
+---
+import Menu from "../components/Menu.astro"
+import "./Layout.sass"
+
+export interface Props {
+  title: string
+  description: string
+}
+
+const siteTitle = "musicmusic’s foobar2000 stuff"
+const siteDescription =
+  "Components for the foobar2000 audio player – including Columns UI and iPod manager"
+const siteAuthor = "musicmusic"
+const { title, description } = Astro.props
+
+const computedDescription = description || siteDescription
+const computedTitle = title ? `${title} – ${siteTitle}` : siteTitle
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{computedTitle}</title>
+    <meta name="description" content={computedDescription} />
+    <meta name="og:title" content={computedTitle} />
+    <meta name="og:site_name" content={siteTitle} />
+    <meta name="og:description" content={computedDescription} />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={siteAuthor} />
+    <meta name="twitter:title" content={computedTitle} />
+    <meta name="twitter:description" content={computedDescription} />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-fifth">
+            <Menu pathname={Astro.url.pathname} />
+          </div>
+          <div class="column content">
+            <main>
+              {title && <h2 class="title is-2">{title}</h2>}
+              <slot />
+            </main>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

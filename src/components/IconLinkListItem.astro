@@ -1,0 +1,18 @@
+---
+export interface Props {
+  href: string
+  iconClass: string
+}
+
+const { href, iconClass, ...rest } = Astro.props
+---
+
+<li>
+  <a href={href} {...rest}>
+    <span class="fa-li">
+      <i class={iconClass}></i>
+    </span>
+    <slot />
+  </a>
+  <slot name="suffix" />
+</li>

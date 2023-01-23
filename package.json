@@ -2,45 +2,39 @@
   "name": "yuo-be",
   "private": true,
   "description": "yuo.be website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Reupen Shah",
-  "dependencies": {
-    "@reupen/fontawesome-pro": "^5.15.3",
-    "bulma": "^0.9.3",
-    "gatsby": "^4.2.0",
-    "gatsby-plugin-google-gtag": "^4.2.0",
-    "gatsby-plugin-image": "^2.2.0",
-    "gatsby-plugin-manifest": "^4.2.0",
-    "gatsby-plugin-purgecss": "^6.0.2",
-    "gatsby-plugin-react-helmet": "^5.2.0",
-    "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
-    "gatsby-plugin-remove-trailing-slashes": "^4.2.0",
-    "gatsby-plugin-sass": "^5.2.0",
-    "gatsby-plugin-sharp": "^4.2.0",
-    "gatsby-source-filesystem": "^4.2.0",
-    "gatsby-transformer-sharp": "^4.2.0",
-    "prop-types": "^15.7.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
-  },
-  "devDependencies": {
-    "prettier": "^2.3.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "type": "module",
   "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/reupen/yuo.be"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && npm run purgecss",
+    "preview": "astro preview",
+    "astro": "astro",
+    "purgecss": "purgecss --content 'dist/**/*.html' --css 'dist/assets/*.css' -o 'dist/assets'",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.13.0",
+    "@reupen/fontawesome-pro": "^5.15.4",
+    "astro": "^2.0.1",
+    "astro-compress": "^1.1.28",
+    "bulma": "^0.9.4",
+    "purgecss": "^5.0.0",
+    "sass": "^1.55.0",
+    "solid-js": "^1.5.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.5.5",
+    "sharp": "^0.31.3"
   }
 }

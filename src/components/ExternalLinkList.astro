@@ -1,0 +1,17 @@
+---
+export interface Props {
+  links: {
+    href: string
+    label: string
+  }[]
+}
+
+const { links } = Astro.props
+
+import ExternalLinkListItem from "../components/ExternalLinkListItem.astro"
+import UnorderedIconList from "../components/UnorderedIconList.astro"
+---
+
+<UnorderedIconList>
+  {links.map((link) => <ExternalLinkListItem {...link} />)}
+</UnorderedIconList>

@@ -1,0 +1,35 @@
+---
+import InternalMenuItem from "./InternalMenuItem.astro"
+import ExternalMenuItem from "./ExternalMenuItem.astro"
+
+export interface Props {
+  title: string
+  body: string
+  href: string
+}
+
+const { href, title, body } = Astro.props
+---
+
+<aside class="menu">
+  <p class="menu-label">foobar2000 components</p>
+  <ul class="menu-list">
+    <InternalMenuItem path="/columns-ui" title="Columns UI" />
+    <InternalMenuItem path="/album-list-panel" title="Album list panel" />
+    <InternalMenuItem path="/console-panel" title="Console panel" />
+    <InternalMenuItem path="/typefind-panel" title="Typefind panel" />
+    <InternalMenuItem path="/svg-services" title="SVG services" />
+    <InternalMenuItem path="/ipod-manager" title="iPod manager" />
+  </ul>
+  <p class="menu-label">Development</p>
+  <ul class="menu-list">
+    <InternalMenuItem path="/columns-ui-sdk" title="Columns UI SDK" />
+    <InternalMenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
+  </ul>
+  <p class="menu-label">Miscellaneous</p>
+  <ul class="menu-list">
+    <InternalMenuItem path="/" title="About" />
+    <ExternalMenuItem path="https://wiki.yuo.be" title="Wiki" />
+    <ExternalMenuItem path="https://blog.yuo.be" title="Blog" />
+  </ul>
+</aside>
