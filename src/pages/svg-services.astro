@@ -1,0 +1,24 @@
+---
+import DownloadLayout from "../layouts/DownloadLayout.astro"
+import { DownloadList, DownloadListItem } from "../components"
+
+const title = "SVG services"
+const description = "SVG services – SVG rendering library for foobar2000"
+const repo = "svg-services"
+---
+
+<DownloadLayout title={title} metaDescription={description} repo={repo}>
+  <p>
+    SVG services allows other compatible foobar2000 components to render SVG
+    files.
+  </p>
+
+  <h3 class="title is-3">Downloads</h3>
+  <h4 class="title is-4">Latest version</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_svg_services-0.1.0.x86-x64.fb2k-component"
+      label="Version 0.1.0"
+    />
+  </DownloadList>
+</DownloadLayout>

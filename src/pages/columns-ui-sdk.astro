@@ -1,0 +1,36 @@
+---
+import DownloadLayout from "../layouts/DownloadLayout.astro"
+import { DownloadList, DownloadListItem } from "../components"
+
+const title = "Columns UI SDK"
+const description =
+  "Columns UI SDK – software development kit for Columns UI panels"
+const repo = "columns_ui-sdk"
+const links = [
+  {
+    href: "https://columns-ui-sdk.readthedocs.io/en/latest/",
+    label: "Documentation",
+  },
+]
+---
+
+<DownloadLayout
+  title={title}
+  metaDescription={description}
+  repo={repo}
+  links={links}
+>
+  <p>
+    The Columns UI SDK allows you to develop panel components for Columns UI.
+    See the documentation for more information.
+  </p>
+
+  <h3 class="title is-3">Downloads</h3>
+  <h4 class="title is-4">Latest version</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="columns_ui-sdk-7.0.0-beta.2.7z"
+      label="Version 7.0.0 beta 2"
+    />
+  </DownloadList>
+</DownloadLayout>

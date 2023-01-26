@@ -1,0 +1,23 @@
+---
+export interface Props {
+  filename: string
+  label: string
+}
+
+const { filename, label } = Astro.props
+
+import fs from "node:fs/promises"
+import IconLinkListItem from "./IconLinkListItem.astro"
+import { importDownload } from "../utils/importDownload.ts"
+
+const file = await importDownload(filename)
+---
+
+<IconLinkListItem
+  href={file.url}
+  iconClass="fas fa-download"
+  download={filename}
+>
+  {label} ({file.prettySize}) <slot />
+  <slot name="suffix" slot="suffix" />
+</IconLinkListItem>

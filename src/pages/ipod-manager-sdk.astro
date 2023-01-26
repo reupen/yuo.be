@@ -1,0 +1,22 @@
+---
+import DownloadLayout from "../layouts/DownloadLayout.astro"
+import { DownloadList, DownloadListItem } from "../components"
+
+const title = "iPod manager SDK"
+const description =
+  "iPod manager SDK – software development kit for iPod manager play count receivers"
+const repo = "ipod_manager"
+---
+
+<DownloadLayout title={title} metaDescription={description} repo={repo}>
+  <p>
+    The iPod manager SDK allows other components to receive play count data from
+    iPods.
+  </p>
+
+  <h3 class="title is-3">Downloads</h3>
+  <h4 class="title is-4">Latest version</h4>
+  <DownloadList>
+    <DownloadListItem filename="dop-sdk-0.2.7z" label="Version 0.2" />
+  </DownloadList>
+</DownloadLayout>

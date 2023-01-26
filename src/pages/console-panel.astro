@@ -1,0 +1,52 @@
+---
+import DownloadLayout from "../layouts/DownloadLayout.astro"
+import { DownloadList, DownloadListItem } from "../components"
+
+const title = "Console panel"
+const description = "Console panel – console viewer for Columns UI"
+const repo = "console_panel"
+---
+
+<DownloadLayout
+  title={title}
+  metaDescription={description}
+  repo={repo}
+  links={[
+    {
+      href: `https://github.com/reupen/${repo}/releases`,
+      label: "Release notes",
+    },
+  ]}
+>
+  <p>Console panel is a console viewer for Columns UI.</p>
+
+  <h3 class="title is-3">Downloads</h3>
+
+  <h4 class="title is-4">Latest pre-release version</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_uie_console-3.0.0-beta.2.x86-x64.fb2k-component"
+      label="Version 3.0.0 beta 2"
+    />
+  </DownloadList>
+
+  <h4 class="title is-4">Latest stable version</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_uie_console-2.0.0.fb2k-component"
+      label="Version 2.0.0"
+    />
+  </DownloadList>
+
+  <h4 class="title is-4">Previous versions</h4>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_uie_console-1.0.1.fb2k-component"
+      label="Version 1.0.1"
+    />
+    <DownloadListItem
+      filename="foo_uie_console-0.5.0.fb2k-component"
+      label="Version 0.5.0"
+    />
+  </DownloadList>
+</DownloadLayout>
