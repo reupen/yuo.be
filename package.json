@@ -20,21 +20,20 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.0",
+    "@astrojs/image": "^0.16.0",
     "@reupen/fontawesome-pro": "^5.15.4",
-    "astro": "^2.0.1",
-    "astro-compress": "^1.1.28",
+    "astro": "^2.1.2",
+    "astro-compress": "^1.1.35",
     "bulma": "^0.9.4",
     "purgecss": "^5.0.0",
-    "sass": "^1.55.0",
-    "solid-js": "^1.5.7"
+    "sass": "^1.58.3"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.15.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3",
-    "prettier-plugin-astro": "^0.5.5",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0",
     "sharp": "^0.31.3"
   }
 }
