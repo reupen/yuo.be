@@ -6,11 +6,11 @@ export default defineConfig({
   integrations: [
     image(),
     compress({
-      css: false,
-      html: true,
-      img: false,
-      js: false,
-      svg: true,
+      CSS: false,
+      HTML: true,
+      Image: false,
+      JavaScript: false,
+      SVG: true,
     }),
   ],
   vite: {
