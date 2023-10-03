@@ -1,8 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components"
-
-import darkScreenshot from "../assets/images/columns-ui-dark.png"
-import lightScreenshot from "../assets/images/columns-ui-light.png"
+import darkScreenshot from "../assets/images/columns-ui-dark.webp"
+import lightScreenshot from "../assets/images/columns-ui-light.webp"
 import DownloadLayout from "../layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem, Screenshots } from "../components"
 
@@ -45,17 +43,19 @@ const screenshotHeight = `${(
 >
   <Screenshots>
     <a href={darkScreenshot.src} class="screenshot">
-      <Picture
-        src={darkScreenshot}
-        widths={[300, 600, 900]}
+      <img
+        src={darkScreenshot.src}
+        width={darkScreenshot.width}
+        height={darkScreenshot.height}
         title="Columns UI in dark mode"
         alt="Columns UI in dark mode"
       />
     </a>
     <a href={lightScreenshot.src} class="screenshot">
-      <Picture
-        src={lightScreenshot}
-        widths={[300, 600, 900]}
+      <img
+        src={lightScreenshot.src}
+        width={lightScreenshot.width}
+        height={lightScreenshot.height}
         title="Columns UI in light mode"
         alt="Columns UI in light mode"
       />
