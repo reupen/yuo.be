@@ -16,23 +16,20 @@
     "build": "astro build && npm run purgecss",
     "preview": "astro preview",
     "astro": "astro",
-    "purgecss": "purgecss --content 'dist/**/*.html' --css 'dist/assets/*.css' -o 'dist/assets'",
-    "prepare": "husky install"
+    "purgecss": "purgecss --content 'dist/**/*.html' --css 'dist/assets/*.css' -o 'dist/assets'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "astro": "^3.2.2",
-    "astro-compress": "^2.0.15",
+    "astro": "^3.4.3",
+    "astro-compress": "^2.2.2",
     "bulma": "^0.9.4",
     "purgecss": "^5.0.0",
-    "sass": "^1.68.0"
+    "sass": "^1.69.5"
   },
   "devDependencies": {
-    "@types/node": "^18.18.3",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "@types/node": "^20.8.10",
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-astro": "^0.12.1",
     "sharp": "^0.32.6"
   }
 }
