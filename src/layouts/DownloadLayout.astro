@@ -11,7 +11,7 @@ export interface Props {
   title: string
   metaDescription: string
   repo: string
-  links: { href: string; label: string }[]
+  links?: { href: string; label: string }[]
 }
 
 const { title, metaDescription, repo, links = [] } = Astro.props

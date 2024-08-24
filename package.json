@@ -19,17 +19,17 @@
     "purgecss": "purgecss --content 'dist/**/*.html' --css 'dist/assets/*.css' -o 'dist/assets'"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.2",
-    "astro": "^3.5.0",
-    "astro-compress": "^2.2.3",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "astro": "^4.14.5",
+    "astro-compress": "^2.3.1",
     "bulma": "^0.9.4",
-    "purgecss": "^5.0.0",
-    "sass": "^1.69.5"
+    "purgecss": "^6.0.0",
+    "sass": "^1.77.8"
   },
   "devDependencies": {
-    "@types/node": "^20.9.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1",
-    "sharp": "^0.32.6"
+    "@types/node": "^20.16.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.33.5"
   }
 }
