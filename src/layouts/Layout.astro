@@ -4,7 +4,7 @@ import "./Layout.sass"
 
 export interface Props {
   title: string
-  description: string
+  description?: string
 }
 
 const siteTitle = "musicmusic’s foobar2000 stuff"
@@ -41,7 +41,7 @@ const computedTitle =
       <div class="container">
         <div class="columns">
           <div class="column is-one-fifth">
-            <Menu pathname={Astro.url.pathname} />
+            <Menu />
           </div>
           <div class="column content">
             <main>
