@@ -37,6 +37,11 @@
       "permanent": true
     },
     {
+      "source": "/ipod.php",
+      "destination": "/ipod-manager",
+      "permanent": true
+    },
+    {
       "source": "/ipod_manager",
       "destination": "/ipod-manager",
       "permanent": true
