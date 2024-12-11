@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config"
-import compress from "astro-compress"
+import playformCompress from "@playform/compress"
 
 export default defineConfig({
   integrations: [
-    compress({
+    playformCompress({
       CSS: false,
       HTML: true,
       Image: false,

@@ -16,22 +16,22 @@
     "build": "astro build && npm run purgecss",
     "preview": "astro preview",
     "astro": "astro",
-    "purgecss": "purgecss --content 'dist/**/*.html' --css 'dist/assets/*.css' -o 'dist/assets'"
+    "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css -o ."
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "astro": "^4.16.3",
-    "astro-compress": "^2.3.1",
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "@playform/compress": "^0.1.6",
+    "astro": "^5.0.5",
     "bulma": "^0.9.4",
-    "purgecss": "^6.0.0",
-    "sass": "^1.77.8"
+    "purgecss": "^7.0.2",
+    "sass": "^1.82.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@types/node": "^20.16.1",
-    "prettier": "^3.3.3",
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.10.2",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.33.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.7.2"
   }
 }
