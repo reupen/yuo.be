@@ -1,6 +1,7 @@
 ci:
   skip:
     - prettier
+    - eslint
     - astro-check
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -17,8 +18,14 @@ repos:
         entry: npm exec --no -- prettier --write --ignore-unknown
         language: system
         types: [text]
+      - id: eslint
+        name: eslint
+        entry: npm exec --no -- eslint --fix --max-warnings 0 .
+        language: system
+        files: \.(([cm]?(j|t)s)|astro|mdx)$
+        exclude: ^src/env\.d\.ts$
       - id: astro-check
         name: astro check
-        entry: npm exec --no -- astro check
+        entry: npm exec --no -- astro check --minimumFailingSeverity hint
         language: system
         pass_filenames: false
