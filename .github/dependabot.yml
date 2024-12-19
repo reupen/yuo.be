@@ -1,0 +1,34 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    versioning-strategy: increase
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns:
+          - "@astrojs/*"
+          - "@playform/compress"
+          - "astro"
+          - "astro-*"
+      eslint:
+        patterns:
+          - "@eslint/*"
+          - "eslint"
+          - "eslint-*"
+      typescript:
+        patterns:
+          - "typescript"
+          - "typescript-eslint"

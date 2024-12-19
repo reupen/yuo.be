@@ -15,6 +15,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && npm run purgecss",
+    "format:check": "prettier -c .",
     "lint": "eslint --max-warnings 0 .",
     "preview": "astro preview",
     "astro": "astro",
