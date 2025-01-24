@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+$brown: #995002;
+$charcoal: #2f2d28;
+$yellow-light: #e6dece;
+
+@use "bulma/sass/utilities" with (
+  $family-primary: "system-ui, sans-serif",
+  $grey-dark: $charcoal,
+  $grey-light: $yellow-light,
+  $link: $brown,
+  $warning: #f4df8a,
+  $widescreen-enabled: false,
+  $fullhd-enabled: false
+);
+
+@forward "bulma/sass/base";
+@forward "bulma/sass/components/menu";
+@forward "bulma/sass/elements/content";
+@forward "bulma/sass/elements/title";
+@forward "bulma/sass/elements/notification";
+@forward "bulma/sass/grid/columns";
+@forward "bulma/sass/layout/container";
+@forward "bulma/sass/layout/section";
+
+@forward "bulma/sass/themes";
+
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+
+@use "@fortawesome/fontawesome-free/scss/solid" with (
+  $fa-font-path: $fa-font-path
+);
+
+@media not (prefers-color-scheme: dark) {
+  :root {
+    --bulma-scheme-h: 39;
+    --bulma-scheme-s: 45%;
+    --bulma-scheme-main-l: 90%;
+  }
+}
+
+.content {
+  --bulma-content-heading-weight: 600;
+}
+
+.menu .is-active {
+  font-weight: bold;
+}

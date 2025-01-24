@@ -1,6 +1,6 @@
 ---
 import Menu from "../components/Menu.astro"
-import "./Layout.sass"
+import "./Layout.scss"
 
 export interface Props {
   title: string
@@ -39,8 +39,8 @@ const computedTitle =
   <body>
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column is-one-fifth">
+        <div class="columns is-4">
+          <div class="column is-narrow">
             <Menu />
           </div>
           <div class="column content">
