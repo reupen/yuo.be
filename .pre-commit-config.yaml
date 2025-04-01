@@ -20,7 +20,7 @@ repos:
         types: [text]
       - id: eslint
         name: eslint
-        entry: npm exec --no -- eslint --fix --max-warnings 0 .
+        entry: npm exec --no -- eslint --fix --max-warnings 0 --no-warn-ignored
         language: system
         files: \.(([cm]?(j|t)s)|astro|mdx)$
         exclude: ^src/env\.d\.ts$
