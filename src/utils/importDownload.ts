@@ -5,10 +5,10 @@ export async function importDownload(filename: string) {
   const path = parse(filename)
 
   const fileSize = (await fs.stat(`src/assets/downloads/${filename}`)).size
-  const fileSizeKB = Math.round(fileSize / 1024)
+  const fileSizeKB = Math.round(fileSize / 1000)
   const prettyFileSize =
-    fileSizeKB > 1000
-      ? `${(fileSizeKB / 1024).toFixed(1)} MB`
+    fileSizeKB >= 1000
+      ? `${(fileSizeKB / 1000).toFixed(1)} MB`
       : `${fileSizeKB.toFixed(0)} kB`
 
   let url
