@@ -22,8 +22,11 @@ $yellow-light: #e6dece;
 @forward "bulma/sass/grid/columns";
 @forward "bulma/sass/layout/container";
 @forward "bulma/sass/layout/section";
+@forward "bulma/sass/helpers/spacing";
 
 @forward "bulma/sass/themes";
+
+@use "bulma/sass/utilities/mixins";
 
 @use "@fortawesome/fontawesome-free/scss/variables" with (
   $font-path: "@fortawesome/fontawesome-free/webfonts"
@@ -43,6 +46,16 @@ $yellow-light: #e6dece;
   --bulma-content-heading-weight: 600;
 }
 
-.menu .is-active {
-  font-weight: bold;
+.menu {
+  @include mixins.from(utilities.$tablet) {
+    margin-top: 0.5rem;
+  }
+
+  .is-active {
+    font-weight: bold;
+  }
+}
+
+.menu-label {
+  padding-left: 0.75rem;
 }

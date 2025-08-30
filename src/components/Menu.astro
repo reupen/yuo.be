@@ -4,24 +4,25 @@ import ExternalMenuItem from "./ExternalMenuItem.astro"
 ---
 
 <aside class="menu">
+  <ul class="menu-list">
+    <InternalMenuItem path="/" title="Home" />
+  </ul>
   <p class="menu-label">foobar2000 components</p>
   <ul class="menu-list">
     <InternalMenuItem path="/columns-ui" title="Columns UI" />
     <InternalMenuItem path="/album-list-panel" title="Album list panel" />
     <InternalMenuItem path="/console-panel" title="Console panel" />
-    <InternalMenuItem path="/typefind-panel" title="Typefind panel" />
     <InternalMenuItem path="/svg-services" title="SVG services" />
-    <InternalMenuItem path="/ipod-manager" title="iPod manager" />
+    <InternalMenuItem path="/typefind-panel" title="Typefind panel" />
   </ul>
-  <p class="menu-label">Development</p>
+  <p class="menu-label">Other</p>
   <ul class="menu-list">
     <InternalMenuItem path="/columns-ui-sdk" title="Columns UI SDK" />
-    <InternalMenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
-  </ul>
-  <p class="menu-label">Miscellaneous</p>
-  <ul class="menu-list">
-    <InternalMenuItem path="/" title="About" />
-    <ExternalMenuItem path="https://wiki.yuo.be" title="Wiki" />
     <ExternalMenuItem path="https://blog.yuo.be" title="Blog" />
+  </ul>
+  <p class="menu-label">Discontinued</p>
+  <ul class="menu-list">
+    <InternalMenuItem path="/ipod-manager" title="iPod manager" />
+    <InternalMenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
   </ul>
 </aside>
