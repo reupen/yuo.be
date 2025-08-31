@@ -1,6 +1,8 @@
 ---
-import darkScreenshot from "../assets/images/columns-ui-dark.webp"
-import lightScreenshot from "../assets/images/columns-ui-light.webp"
+import { Image } from "astro:assets"
+
+import darkScreenshot from "../assets/images/columns-ui-dark.png"
+import lightScreenshot from "../assets/images/columns-ui-light.png"
 import DownloadLayout from "../layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem, Screenshots } from "../components"
 
@@ -8,17 +10,12 @@ const title = "Columns UI"
 const description =
   "Columns UI – alternative UI for the foobar2000 audio player"
 const repo = "columns_ui"
-
-const screenshotHeight = `${(
-  (darkScreenshot.height * 300) /
-  darkScreenshot.width
-).toFixed(0)}px`
 ---
 
-<style define:vars={{ screenshotHeight }}>
+<style>
   .screenshot {
     width: 300px;
-    height: var(--screenshotHeight);
+    height: auto;
   }
 </style>
 
@@ -43,19 +40,21 @@ const screenshotHeight = `${(
 >
   <Screenshots>
     <a href={darkScreenshot.src} class="screenshot">
-      <img
-        src={darkScreenshot.src}
-        width={darkScreenshot.width}
-        height={darkScreenshot.height}
+      <Image
+        src={darkScreenshot}
+        format="png"
+        widths={[300, 600, 900, 1200, darkScreenshot.width]}
+        sizes="300px"
         title="Columns UI in dark mode"
         alt="Columns UI in dark mode"
       />
     </a>
     <a href={lightScreenshot.src} class="screenshot">
-      <img
-        src={lightScreenshot.src}
-        width={lightScreenshot.width}
-        height={lightScreenshot.height}
+      <Image
+        src={lightScreenshot}
+        format="png"
+        widths={[300, 600, 900, 1200, lightScreenshot.width]}
+        sizes="300px"
         title="Columns UI in light mode"
         alt="Columns UI in light mode"
       />
