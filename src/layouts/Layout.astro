@@ -39,17 +39,15 @@ const computedTitle =
   <body>
     <section class="section">
       <div class="container">
-        <div class="columns is-4">
-          <div class="column is-narrow">
+        <main class="columns is-4">
+          <aside class="column is-narrow">
             <Menu />
-          </div>
+          </aside>
           <div class="column content">
-            <main>
-              {title && <h2 class="title is-2">{title}</h2>}
-              <slot />
-            </main>
+            {title && <h1 class="title is-2">{title}</h1>}
+            <slot />
           </div>
-        </div>
+        </main>
       </div>
     </section>
   </body>
