@@ -1,0 +1,58 @@
+---
+import { arePathsEqual } from "../utils/arePathsEqual"
+
+export interface Props {
+  title: string
+  path: string
+}
+
+const { path, title } = Astro.props
+---
+
+<li
+  class={path.startsWith("/") && arePathsEqual(Astro.url.pathname, path)
+    ? "is-active"
+    : ""}
+>
+  <a href={path}>
+    {title}
+  </a>
+</li>
+
+<style>
+  a {
+    color: var(--text-colour-muted);
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  li {
+    position: relative;
+    display: block;
+    margin: 0 0 0.4rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    border-left: 0.25rem solid transparent;
+
+    &:hover,
+    &.is-active {
+      border-color: var(--text-accent-colour);
+    }
+
+    &.is-active {
+      background-color: var(--menu-item-active-background);
+    }
+
+    &:hover {
+      background-color: var(--menu-item-hover-background);
+    }
+  }
+</style>

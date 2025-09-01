@@ -2,8 +2,7 @@
 
 This repo contains the source for [yuo.be](https://yuo.be).
 
-The site was built using [Astro](https://astro.build) and also uses the
-[Bulma](https://bulma.io/) CSS framework.
+The site was built using [Astro](https://astro.build).
 
 ## Building the site
 

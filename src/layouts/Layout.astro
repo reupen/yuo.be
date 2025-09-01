@@ -1,6 +1,7 @@
 ---
 import Menu from "../components/Menu.astro"
-import "./Layout.scss"
+import "./font-awesome.scss"
+import "./globals.pcss"
 
 export interface Props {
   title: string
@@ -18,7 +19,6 @@ const computedTitle =
   title && title !== siteTitle ? `${title} – ${siteTitle}` : siteTitle
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,18 +37,46 @@ const computedTitle =
     <meta name="twitter:description" content={computedDescription} />
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <main class="columns is-4">
-          <div class="column is-narrow">
-            <Menu />
-          </div>
-          <div class="column content">
-            {title && <h1 class="title is-2">{title}</h1>}
-            <slot />
-          </div>
-        </main>
+    <main>
+      <div class="menu section">
+        <Menu />
       </div>
-    </section>
+      <div class="content section">
+        {title && <h1>{title}</h1>}
+        <slot />
+      </div>
+    </main>
   </body>
 </html>
+
+<style>
+  main {
+    display: block;
+    max-width: var(--max-body-width);
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 1.5rem 1rem 1.5rem;
+  }
+
+  .content.section {
+    padding-top: 0;
+  }
+
+  @media (min-width: 600px) {
+    main {
+      display: grid;
+      grid-template-columns: fit-content(200px) 1fr;
+    }
+
+    .section,
+    .content.section {
+      padding: 3rem 1rem 2rem;
+    }
+
+    .menu.section {
+      padding-top: 3.5rem;
+    }
+  }
+</style>

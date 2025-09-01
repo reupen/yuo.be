@@ -2,6 +2,7 @@ ci:
   skip:
     - prettier
     - eslint
+    - stylelint
     - astro-check
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -24,6 +25,11 @@ repos:
         language: system
         files: \.(([cm]?(j|t)s)|astro|mdx)$
         exclude: ^src/env\.d\.ts$
+      - id: stylelint
+        name: stylelint
+        entry: npm exec --no -- stylelint --fix
+        language: system
+        files: ".pcss$"
       - id: astro-check
         name: astro check
         entry: npm exec --no -- astro check --minimumFailingSeverity hint

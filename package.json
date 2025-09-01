@@ -25,7 +25,6 @@
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@playform/compress": "^0.2.0",
     "astro": "^5.13.2",
-    "bulma": "^1.0.4",
     "purgecss": "^7.0.2",
     "sass": "^1.89.2"
   },
@@ -34,12 +33,16 @@
     "@eslint/js": "^9.32.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.17.0",
+    "cssnano": "^7.1.1",
     "eslint": "^9.32.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "postcss-preset-env": "^10.1.1",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.3",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^39.0.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.39.0"
   }

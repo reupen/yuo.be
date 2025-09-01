@@ -35,14 +35,14 @@ const repo = "ipod_manager"
     },
   ]}
 >
-  <div class="notification is-warning">
+  <div class="notification">
     <p>
       <strong>No longer under development</strong>
     </p>
     <p>iPod manager is no longer under development.</p>
   </div>
 
-  <div class="notification is-warning">
+  <div class="notification">
     <p>
       <strong>Notice about iOS support</strong>
     </p>
@@ -66,7 +66,7 @@ const repo = "ipod_manager"
     <li>automatic conversion of unsupported audio formats</li>
     <li>smart playlist creation</li>
   </ul>
-  <h3 class="title is-3">Requirements</h3>
+  <h2>Requirements</h2>
   <ul>
     <li>Windows 7 or newer</li>
     <li>foobar2000 1.4 or newer</li>
@@ -82,9 +82,9 @@ const repo = "ipod_manager"
     </li>
   </ul>
 
-  <h3 class="title is-3">Downloads</h3>
+  <h2>Downloads</h2>
 
-  <h4 class="title is-4">Latest version</h4>
+  <h3>Latest version</h3>
   <DownloadList>
     <DownloadListItem
       filename="foo_dop-0.7.2.fb2k-component"
@@ -92,7 +92,7 @@ const repo = "ipod_manager"
     />
   </DownloadList>
 
-  <h4 class="title is-4">Previous versions</h4>
+  <h3>Previous versions</h3>
   <DownloadList>
     <DownloadListItem
       filename="foo_dop-0.7.1.fb2k-component"
@@ -100,3 +100,36 @@ const repo = "ipod_manager"
     />
   </DownloadList>
 </DownloadLayout>
+
+<style>
+  .notification {
+    display: block;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: light-dark(#efdf7f, #fff099);
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #151515;
+    }
+
+    a {
+      &,
+      &:visited {
+        color: #bf4200;
+      }
+
+      &:hover {
+        color: #881f00;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+</style>

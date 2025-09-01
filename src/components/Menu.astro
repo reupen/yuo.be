@@ -1,28 +1,45 @@
 ---
-import InternalMenuItem from "./InternalMenuItem.astro"
-import ExternalMenuItem from "./ExternalMenuItem.astro"
+import MenuItem from "./MenuItem.astro"
 ---
 
-<aside class="menu">
-  <ul class="menu-list">
-    <InternalMenuItem path="/" title="Home" />
+<aside>
+  <ul>
+    <MenuItem path="/" title="Home" />
   </ul>
-  <p class="menu-label">Components</p>
-  <ul class="menu-list">
-    <InternalMenuItem path="/columns-ui" title="Columns UI" />
-    <InternalMenuItem path="/album-list-panel" title="Album list panel" />
-    <InternalMenuItem path="/console-panel" title="Console panel" />
-    <InternalMenuItem path="/svg-services" title="SVG services" />
-    <InternalMenuItem path="/typefind-panel" title="Typefind panel" />
+  <p>Components</p>
+  <ul>
+    <MenuItem path="/columns-ui" title="Columns UI" />
+    <MenuItem path="/album-list-panel" title="Album list panel" />
+    <MenuItem path="/console-panel" title="Console panel" />
+    <MenuItem path="/svg-services" title="SVG services" />
+    <MenuItem path="/typefind-panel" title="Typefind panel" />
   </ul>
-  <p class="menu-label">Other</p>
-  <ul class="menu-list">
-    <InternalMenuItem path="/columns-ui-sdk" title="Columns UI SDK" />
-    <ExternalMenuItem path="https://blog.yuo.be" title="Blog" />
+  <p>Other</p>
+  <ul>
+    <MenuItem path="/columns-ui-sdk" title="Columns UI SDK" />
+    <MenuItem path="https://blog.yuo.be" title="Blog" />
   </ul>
-  <p class="menu-label">Discontinued</p>
-  <ul class="menu-list">
-    <InternalMenuItem path="/ipod-manager" title="iPod manager" />
-    <InternalMenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
+  <p>Discontinued</p>
+  <ul>
+    <MenuItem path="/ipod-manager" title="iPod manager" />
+    <MenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
   </ul>
 </aside>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  p {
+    color: var(--menu-heading-color);
+    font-weight: 500;
+    margin: 1.5rem 0 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+    border-left: 0.25rem solid transparent;
+  }
+</style>

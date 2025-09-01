@@ -1,0 +1,139 @@
+:root {
+  color-scheme: light dark;
+
+  --body-background: light-dark(#fcf0e2, #121212);
+  --font-family: system-ui, sans-serif;
+  --max-body-width: 1000px;
+
+  /*
+   Can't use CSS variables inside emulated functions with postcss-preset-env
+   https://github.com/csstools/postcss-plugins/issues/1659
+  */
+  --menu-heading-color: light-dark(
+    oklch(from #151515 /* var(--text-colour-muted) */ calc(l + 0.34) c h),
+    oklch(from #bbb8af /* var(--text-colour-muted) */ calc(l - 0.16) c h)
+  );
+  --menu-item-active-background: light-dark(
+    oklch(
+      from #d35917 /* var(--text-accent-colour)*/ calc(l + 0.3) calc(c - 0.13) h
+    ),
+    oklch(from #14161a /* var(--body-background) */ calc(l + 0.1) c h)
+  );
+  --menu-item-hover-background: light-dark(
+    oklch(
+      from #d35917 /* var(--text-accent-colour)*/ calc(l + 0.31) calc(c - 0.05)
+        h
+    ),
+    oklch(from #14161a /* var(--body-background) */ calc(l + 0.12) c h)
+  );
+  --text-accent-colour: light-dark(#a12400, #ff8049);
+  --text-accent-colour-highlight: light-dark(#b82a00, #ffaf47);
+  --text-colour: light-dark(#000, #fff);
+  --text-colour-muted: light-dark(#151515, #ccc);
+  --fa-li-margin: 2rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--body-background);
+  color: var(--text-colour);
+  font-family: var(--font-family);
+  font-feature-settings: "salt";
+  text-wrap: pretty;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0 0 1.5rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 2.5rem 0 1.25rem;
+}
+
+h3 {
+  font-size: 22px;
+  margin: 2rem 0 0.55rem;
+}
+
+h2 + h3 {
+  margin-top: 0;
+}
+
+a {
+  text-decoration-line: none;
+  text-decoration-thickness: 6%;
+  text-underline-offset: 0.2em;
+
+  &,
+  :visited {
+    color: var(--text-accent-colour);
+  }
+
+  &:hover {
+    color: var(--text-accent-colour-highlight);
+    text-decoration-line: underline;
+  }
+}
+
+p,
+li {
+  line-height: 1.5;
+  color: var(--text-colour-muted);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ol,
+ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0 1rem 0.2rem;
+}
+
+li {
+  margin: 0 0 0.25rem;
+  padding-left: 0.1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

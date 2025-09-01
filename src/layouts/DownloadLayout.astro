@@ -19,7 +19,7 @@ const { title, metaDescription, repo, links = [] } = Astro.props
 
   <slot />
 
-  <h3 class="title is-3">Links</h3>
+  <h2>Links</h2>
   <ExternalLinkList
     links={[
       { href: `https://github.com/reupen/${repo}`, label: "GitHub repository" },
