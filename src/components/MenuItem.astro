@@ -42,17 +42,14 @@ const { path, title } = Astro.props
     border-radius: 0 0.3rem 0.3rem 0;
     border-left: 0.25rem solid transparent;
 
-    &:hover,
-    &.is-active {
-      border-color: var(--text-accent-colour);
-    }
-
     &.is-active {
       background-color: var(--menu-item-active-background);
+      border-color: var(--text-accent-colour);
     }
 
     &:hover {
       background-color: var(--menu-item-hover-background);
+      border-color: var(--text-accent-colour-highlight);
     }
   }
 </style>

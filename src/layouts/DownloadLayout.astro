@@ -1,20 +1,35 @@
 ---
 import Layout from "./Layout.astro"
-import { ExternalLinkList, GitHubStars } from "../components"
+import { ExternalLinkList } from "../components"
 
 export interface Props {
   title: string
   metaDescription: string
   repo: string
+  hasSponsorLink?: boolean
   links?: { href: string; label: string }[]
 }
 
-const { title, metaDescription, repo, links = [] } = Astro.props
+const { title, metaDescription, repo, hasSponsorLink, links = [] } = Astro.props
 ---
 
 <Layout title={title} description={metaDescription}>
-  <p>
-    <GitHubStars repo={repo} />
+  <p class="badges">
+    <a href={`https://github.com/reupen/${repo}`} title="View on GitHub">
+      <img
+        style={{ height: "25px", width: "auto" }}
+        src={`https://img.shields.io/github/stars/reupen/${repo}.svg?style=false&logo=github&label=Stars`}
+        alt="Number of GitHub stars"
+      />
+    </a>
+    {
+      hasSponsorLink && (
+        <a class="sponsor" href={`https://github.com/sponsors/reupen`}>
+          <i class="fa-regular fa-heart fa-width-auto " />
+          Sponsor on GitHub
+        </a>
+      )
+    }
   </p>
 
   <slot />
@@ -27,3 +42,35 @@ const { title, metaDescription, repo, links = [] } = Astro.props
     ]}
   />
 </Layout>
+
+<style>
+  .badges {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sponsor {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 6px;
+    background: light-dark(
+      oklch(
+        from #d35917 /* var(--text-accent-colour)*/ calc(l + 0.38)
+          calc(c - 0.05) h
+      ),
+      oklch(from #14161a /* var(--body-background) */ calc(l + 0.06) c h)
+    );
+
+    &:hover {
+      background: var(--menu-item-hover-background);
+      text-decoration: none;
+    }
+  }
+
+  .fa-heart {
+    color: light-dark(#ff00d5, #ff13d3);
+  }
+</style>
