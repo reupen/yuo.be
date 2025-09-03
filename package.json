@@ -26,7 +26,7 @@
     "@playform/compress": "^0.2.0",
     "astro": "^5.13.5",
     "purgecss": "^7.0.2",
-    "sass": "^1.89.2"
+    "sass": "^1.92.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
