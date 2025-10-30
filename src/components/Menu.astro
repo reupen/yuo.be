@@ -1,5 +1,6 @@
 ---
 import MenuItem from "./MenuItem.astro"
+import BuyMeACoffeeButtonImage from "../assets/images/buy-me-a-coffee-button.svg"
 ---
 
 <aside>
@@ -24,6 +25,12 @@ import MenuItem from "./MenuItem.astro"
     <MenuItem path="/ipod-manager" title="iPod manager" />
     <MenuItem path="/ipod-manager-sdk" title="iPod manager SDK" />
   </ul>
+
+  <p class="badges">
+    <a href="https://www.buymeacoffee.com/reupen" title="Buy me a coffee">
+      <BuyMeACoffeeButtonImage height={40} width={142} />
+    </a>
+  </p>
 </aside>
 
 <style>

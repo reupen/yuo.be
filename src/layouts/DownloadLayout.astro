@@ -6,11 +6,10 @@ export interface Props {
   title: string
   metaDescription: string
   repo: string
-  hasSponsorLink?: boolean
   links?: { href: string; label: string }[]
 }
 
-const { title, metaDescription, repo, hasSponsorLink, links = [] } = Astro.props
+const { title, metaDescription, repo, links = [] } = Astro.props
 ---
 
 <Layout title={title} description={metaDescription}>
@@ -22,14 +21,6 @@ const { title, metaDescription, repo, hasSponsorLink, links = [] } = Astro.props
         alt="Number of GitHub stars"
       />
     </a>
-    {
-      hasSponsorLink && (
-        <a class="sponsor" href={`https://github.com/sponsors/reupen`}>
-          <i class="fa-regular fa-heart fa-width-auto " />
-          Sponsor on GitHub
-        </a>
-      )
-    }
   </p>
 
   <slot />
