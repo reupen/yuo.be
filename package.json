@@ -24,7 +24,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@playform/compress": "^0.2.0",
-    "astro": "^5.15.3",
+    "astro": "^5.15.6",
     "purgecss": "^7.0.2",
     "sass": "^1.92.0"
   },
