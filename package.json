@@ -22,7 +22,7 @@
     "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css -o ."
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@playform/compress": "^0.2.0",
     "astro": "^5.16.3",
     "purgecss": "^7.0.2",
