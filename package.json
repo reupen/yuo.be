@@ -30,11 +30,11 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
-    "@eslint/js": "^9.39.1",
+    "@eslint/js": "^9.39.2",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^22.19.3",
     "cssnano": "^7.1.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "postcss-preset-env": "^10.4.0",
