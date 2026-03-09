@@ -19,7 +19,7 @@
     "lint": "eslint --max-warnings 0 .",
     "preview": "astro preview",
     "astro": "astro",
-    "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css -o ."
+    "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css --preserve-paths -o ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
