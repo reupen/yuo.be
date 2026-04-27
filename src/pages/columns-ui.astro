@@ -1,10 +1,7 @@
 ---
-import { Image } from "astro:assets"
-
-import darkScreenshot from "../assets/images/columns-ui-dark.png"
-import lightScreenshot from "../assets/images/columns-ui-light.png"
+import columnsUiDemoMp4 from "../assets/images/columns-ui-demo.mp4"
 import DownloadLayout from "../layouts/DownloadLayout.astro"
-import { DownloadList, DownloadListItem, Screenshots } from "../components"
+import { DownloadList, DownloadListItem } from "../components"
 
 const title = "Columns UI"
 const description =
@@ -13,8 +10,8 @@ const repo = "columns_ui"
 ---
 
 <style>
-  .screenshot {
-    width: 300px;
+  video {
+    width: 100%;
     height: auto;
   }
 </style>
@@ -38,28 +35,17 @@ const repo = "columns_ui"
     },
   ]}
 >
-  <Screenshots>
-    <a href={darkScreenshot.src} class="screenshot">
-      <Image
-        src={darkScreenshot}
-        format="png"
-        widths={[300, 600, 900, 1200, darkScreenshot.width]}
-        sizes="300px"
-        title="Columns UI in dark mode"
-        alt="Columns UI in dark mode"
-      />
-    </a>
-    <a href={lightScreenshot.src} class="screenshot">
-      <Image
-        src={lightScreenshot}
-        format="png"
-        widths={[300, 600, 900, 1200, lightScreenshot.width]}
-        sizes="300px"
-        title="Columns UI in light mode"
-        alt="Columns UI in light mode"
-      />
-    </a>
-  </Screenshots>
+  <video
+    width="2384"
+    height="1322"
+    controls
+    muted
+    playsinline
+    aria-label="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
+    title="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
+  >
+    <source src={columnsUiDemoMp4} type="video/mp4" />
+  </video>
 
   <p>
     Columns UI is an open-source user interface for the foobar2000 audio player,
@@ -68,13 +54,22 @@ const repo = "columns_ui"
   <p>Its features include:</p>
   <ul>
     <li>a dark mode on Windows 10 and 11</li>
-    <li>a playlist view with grouping, artwork and in-line metadata editing</li>
+    <li>
+      grouping support in the playlist view with variable grouping levels,
+      artwork and sticky group headings
+    </li>
+    <li>optional smooth scrolling in most built-in panels</li>
+    <li>inline metadata editing</li>
     <li>
       <a href="https://en.wikipedia.org/wiki/DirectWrite" rel="noopener"
         >DirectWrite text rendering</a
-      > in most built-in panels, including colour emoji support
+      > in most built-in panels with support for colour emojis, variable fonts and
+      dynamic text styling
     </li>
-    <li>colour management for artwork</li>
+    <li>
+      colour management for artwork, and HDR image support in the artwork view
+      panel
+    </li>
     <li>
       support for SVG icons in the buttons toolbar via <a href="/svg-services"
         >SVG services</a
@@ -86,18 +81,32 @@ const repo = "columns_ui"
   </ul>
   <h2>Requirements</h2>
   <ul>
-    <li>Windows 7 Service Pack 1 with Platform Update, or newer</li>
+    <li>Windows 10 or newer</li>
     <li>foobar2000 1.5 or newer</li>
   </ul>
 
   <h2>Downloads</h2>
 
-  <h3>Latest version</h3>
+  <h3>Latest pre-release version</h3>
+  <DownloadList>
+    <DownloadListItem
+      filename="foo_ui_columns-3.5.0-alpha.1.x86-x64.fb2k-component"
+      label="Version 3.5.0 alpha 1"
+    >
+      <span slot="suffix">– requires Windows 10 or newer</span>
+    </DownloadListItem>
+  </DownloadList>
+
+  <h3>Latest stable version</h3>
   <DownloadList>
     <DownloadListItem
       filename="foo_ui_columns-3.4.1.x86-x64.fb2k-component"
       label="Version 3.4.1"
-    />
+    >
+      <span slot="suffix"
+        >– the last version compatible with Windows 7, 8 and 8.1</span
+      >
+    </DownloadListItem>
   </DownloadList>
 
   <p>
