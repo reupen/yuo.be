@@ -1,24 +1,25 @@
 ---
-import Layout from "./Layout.astro"
 import { ExternalLinkList } from "@/components"
 
+import Layout from "./Layout.astro"
+
 export interface Props {
-  title: string
+  links?: { href: string; label: string }[]
   metaDescription: string
   repo: string
-  links?: { href: string; label: string }[]
+  title: string
 }
 
 const { title, metaDescription, repo, links = [] } = Astro.props
 ---
 
-<Layout title={title} description={metaDescription}>
+<Layout description={metaDescription} title={title}>
   <p class="badges">
     <a href={`https://github.com/reupen/${repo}`} title="View on GitHub">
       <img
-        style={{ height: "25px", width: "auto" }}
         src={`https://img.shields.io/github/stars/reupen/${repo}.svg?style=false&logo=github&label=Stars`}
         alt="Number of GitHub stars"
+        style={{ height: "25px", width: "auto" }}
       />
     </a>
   </p>

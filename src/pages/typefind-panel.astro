@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "Typefind panel"
 const description =
@@ -8,7 +8,7 @@ const description =
 const repo = "typefind_panel"
 ---
 
-<DownloadLayout title={title} metaDescription={description} repo={repo}>
+<DownloadLayout metaDescription={description} repo={repo} title={title}>
   <p>Typefind is an in-line playlist search bar for Columns UI.</p>
 
   <h2>Usage</h2>

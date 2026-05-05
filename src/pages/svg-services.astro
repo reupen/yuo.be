@@ -1,13 +1,13 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "SVG services"
 const description = "SVG services – SVG rendering library for foobar2000"
 const repo = "svg-services"
 ---
 
-<DownloadLayout title={title} metaDescription={description} repo={repo}>
+<DownloadLayout metaDescription={description} repo={repo} title={title}>
   <p>
     SVG services allows other compatible foobar2000 components to render SVG
     files.

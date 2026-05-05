@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "Columns UI SDK"
 const description =
@@ -15,10 +15,10 @@ const links = [
 ---
 
 <DownloadLayout
-  title={title}
+  links={links}
   metaDescription={description}
   repo={repo}
-  links={links}
+  title={title}
 >
   <p>
     The Columns UI SDK allows you to develop panel components for Columns UI.

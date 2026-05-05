@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "iPod manager"
 const description =
@@ -9,9 +9,6 @@ const repo = "ipod_manager"
 ---
 
 <DownloadLayout
-  title={title}
-  metaDescription={description}
-  repo={repo}
   links={[
     {
       href: `https://github.com/reupen/${repo}/releases`,
@@ -34,6 +31,9 @@ const repo = "ipod_manager"
       label: "Discussion at the foobar2000 forums",
     },
   ]}
+  metaDescription={description}
+  repo={repo}
+  title={title}
 >
   <div class="notification">
     <p>

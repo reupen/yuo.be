@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "Console panel"
 const description = "Console panel – console viewer for Columns UI"
@@ -8,15 +8,15 @@ const repo = "console_panel"
 ---
 
 <DownloadLayout
-  title={title}
-  metaDescription={description}
-  repo={repo}
   links={[
     {
       href: `https://github.com/reupen/${repo}/releases`,
       label: "Release notes",
     },
   ]}
+  metaDescription={description}
+  repo={repo}
+  title={title}
 >
   <p>Console panel is a console viewer for Columns UI.</p>
 

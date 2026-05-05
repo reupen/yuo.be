@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "Album list panel"
 const description =
@@ -9,15 +9,15 @@ const repo = "album_list_panel"
 ---
 
 <DownloadLayout
-  title={title}
-  metaDescription={description}
-  repo={repo}
   links={[
     {
       href: `https://github.com/reupen/${repo}/releases`,
       label: "Release notes",
     },
   ]}
+  metaDescription={description}
+  repo={repo}
+  title={title}
 >
   <p>
     Album list panel is a Columns UI panel that allows you to browse your music

@@ -17,6 +17,7 @@
     "build": "astro build && npm run purgecss",
     "format:check": "prettier -c .",
     "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "npm run lint -- --fix",
     "preview": "astro preview",
     "astro": "astro",
     "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css --preserve-paths -o ."
@@ -37,6 +38,8 @@
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-perfectionist": "^5.9.0",
+    "globals": "^17.6.0",
     "postcss-preset-env": "^11.2.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",

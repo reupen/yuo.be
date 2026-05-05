@@ -1,5 +1,5 @@
-import { defineConfig } from "astro/config"
 import playformCompress from "@playform/compress"
+import { defineConfig } from "astro/config"
 
 export default defineConfig({
   integrations: [

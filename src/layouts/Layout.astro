@@ -1,11 +1,12 @@
 ---
 import Menu from "@/components/Menu.astro"
+
 import "./font-awesome.scss"
 import "./globals.pcss"
 
 export interface Props {
-  title: string
   description?: string
+  title: string
 }
 
 const siteTitle = "musicmusic’s foobar2000 stuff"
@@ -23,8 +24,8 @@ const computedTitle =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="64x64" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+    <link href="/favicon.ico" rel="icon" sizes="64x64" type="image/x-icon" />
+    <link href="/favicon.svg" rel="icon" sizes="any" type="image/svg+xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{computedTitle}</title>
     <meta name="description" content={computedDescription} />

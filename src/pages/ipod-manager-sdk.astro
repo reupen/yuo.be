@@ -1,6 +1,6 @@
 ---
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "iPod manager SDK"
 const description =
@@ -8,7 +8,7 @@ const description =
 const repo = "ipod_manager"
 ---
 
-<DownloadLayout title={title} metaDescription={description} repo={repo}>
+<DownloadLayout metaDescription={description} repo={repo} title={title}>
   <p>
     The iPod manager SDK allows other components to receive play count data from
     iPods.

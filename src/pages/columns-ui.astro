@@ -1,7 +1,7 @@
 ---
 import columnsUiDemoMp4 from "@/assets/images/columns-ui-demo.mp4"
-import DownloadLayout from "@/layouts/DownloadLayout.astro"
 import { DownloadList, DownloadListItem } from "@/components"
+import DownloadLayout from "@/layouts/DownloadLayout.astro"
 
 const title = "Columns UI"
 const description =
@@ -17,9 +17,6 @@ const repo = "columns_ui"
 </style>
 
 <DownloadLayout
-  title={title}
-  metaDescription={description}
-  repo={repo}
   links={[
     {
       href: `https://github.com/reupen/${repo}/releases`,
@@ -34,15 +31,18 @@ const repo = "columns_ui"
       label: "Discussion at the foobar2000 forums",
     },
   ]}
+  metaDescription={description}
+  repo={repo}
+  title={title}
 >
   <video
-    width="2384"
+    aria-label="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
     height="1322"
+    title="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
+    width="2384"
     controls
     muted
     playsinline
-    aria-label="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
-    title="Dark mode, light mode, grouping and smooth scrolling in Columns UI"
   >
     <source src={columnsUiDemoMp4} type="video/mp4" />
   </video>
