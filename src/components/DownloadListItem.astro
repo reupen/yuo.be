@@ -7,7 +7,7 @@ export interface Props {
 const { filename, label } = Astro.props
 
 import IconLinkListItem from "./IconLinkListItem.astro"
-import { importDownload } from "../utils/importDownload.ts"
+import { importDownload } from "@/utils/importDownload.ts"
 
 const file = await importDownload(filename)
 ---
