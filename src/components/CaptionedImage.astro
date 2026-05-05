@@ -1,0 +1,27 @@
+---
+import type { ComponentProps } from "astro/types"
+
+import PostImage from "./PostImage.astro"
+
+type PostImageProps = ComponentProps<typeof PostImage>
+type Props = PostImageProps & {
+  caption?: string
+  src: Extract<PostImageProps["src"], { src: string }>
+}
+
+const { caption, ...rest } = Astro.props
+---
+
+<figure>
+  <a href={rest.src.src}>
+    <PostImage {...rest} />
+  </a>
+  {
+    (caption || Astro.slots.has("default")) && (
+      <figcaption>
+        {caption && <span>{caption}</span>}
+        <slot />
+      </figcaption>
+    )
+  }
+</figure>

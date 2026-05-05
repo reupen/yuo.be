@@ -1,0 +1,146 @@
+---
+title: "What’s new in Columns UI 3.4.0"
+date: 2026-05-20
+excerpt:
+  "Columns UI 3.4.0, released in March 2026, features smooth scrolling, sticky
+  group headings and more."
+---
+
+import smooth_scrolling_mp4 from "./smooth-scrolling.mp4"
+import spectrum_mp4 from "./spectrum.mp4"
+import sticky_group_headings_mp4 from "./sticky-group-headings.mp4"
+
+Hello 👋 This is the inaugural post in the news section of this site, where more
+detailed information about notable new versions of my foobar2000 components will
+be posted.
+
+This first post is about [Columns UI](/columns-ui), an alternative UI for the
+[foobar2000 audio player](https://foobar2000.org) on Windows. Columns UI is
+written in C++, uses the Win32 API and is
+[open source on GitHub](https://github.com/reupen/columns_ui).
+
+Here’s a summary of the most notable changes in Columns UI 3.4.0, released in
+March 2026.
+
+## Smooth scrolling in most built-in panels
+
+Smooth scrolling here refers to animating the transition between two scroll
+positions. Support for smooth scrolling has been added to the playlist view,
+playlist switcher, Filter panel, Item details and Item properties panels.
+
+Here’s the new smooth scrolling in action in the playlist view:
+
+{
+
+<figure>
+
+  <video
+    aria-label="A screen recording of the playlist view being scrolled down and up to demonstrate showing smooth scrolling."
+    height="1322"
+    width="2384"
+    controls
+    loop
+    muted
+    playsInline
+  >
+    <source src={smooth_scrolling_mp4} type="video/mp4" />
+  </video>
+  <figcaption>
+    The frame rate of the animation is synchronised with the desktop refresh rate when possible
+  </figcaption>
+</figure>
+}
+
+Smooth scrolling is disabled by default. It can be enabled using the **Use
+smooth (animated) scrolling** option found at
+**Preferences**&nbsp;›&nbsp;**Display**&nbsp;›&nbsp;**Columns
+UI**&nbsp;›&nbsp;**Setup**.
+
+(Note that in the playlist view, smooth scrolling performance may be reduced at
+high resolutions for complex configurations.)
+
+## Sticky playlist view group headings
+
+In the playlist view, group headings can now be made sticky so that they stay in
+view when scrolling:
+
+{
+
+<figure>
+  <video
+    aria-label="A screen recording of the playlist view being scrolled with the first group heading staying fixed in position while scrolling."
+    height="1322"
+    width="2384"
+    controls
+    loop
+    muted
+    playsInline
+  >
+    <source src={sticky_group_headings_mp4} type="video/mp4" />
+  </video>
+  <figcaption>Sticky group headings work for multi-level groups too</figcaption>
+</figure>
+
+}
+
+Sticky group headings can be enabled using the **Keep group headings in view
+when scrolling** option found at
+**Preferences**&nbsp;›&nbsp;**Display**&nbsp;›&nbsp;**Columns
+UI**&nbsp;›&nbsp;**Playlist view**&nbsp;›&nbsp;**Grouping**.
+
+## Improved built-in spectrum analyser performance
+
+The built-in spectrum analyser now renders in a background thread and
+synchronises with the Windows desktop refresh rate as closely as possible.
+Here’s the visualisation rendering at just under 60fps on my machine:
+
+{
+
+<figure>
+  <video
+    aria-label="A screen recording of the built-in spectrum analyser visualisation in bars mode."
+    height="218"
+    width="752"
+    controls
+    muted
+    playsInline
+  >
+    <source src={spectrum_mp4} type="video/mp4" />
+  </video>
+  <figcaption>
+    The visualisation is sized larger than it might normally be here
+  </figcaption>
+</figure>
+
+}
+
+## The ability to lock the main window size
+
+A new main menu command has been added to lock the main window size, preventing
+it from being resized using its border. (Maximising and restoring the window is
+still allowed.)
+
+The new menu command can be found at **View**&nbsp;›&nbsp;**Lock window size**.
+
+## Other changes
+
+There were several other smaller changes in Columns UI 3.4.0 – see the
+[release notes](https://github.com/reupen/columns_ui/releases) from version
+3.4.0-alpha.1 onwards for full details.
+
+## How to update
+
+If you currently have Columns UI installed, you can update to the latest version
+using the **Help**&nbsp;›&nbsp;**Check for updated components** command in
+foobar2000. (Note that Columns UI 3.4.1 is the last version to support Windows
+7, 8 and 8.1. Versions from 3.5.0 onwards, including pre-releases, require
+Windows 10 or newer.)
+
+If you have foobar2000 installed and want to add Columns UI to it, download
+Columns UI from the [Columns UI page](/columns-ui), open foobar2000, navigate to
+**Preferences**&nbsp;›&nbsp;**Components**, click the **Install…** button and
+select the downloaded file. Alternatively, if file associations are set up, you
+can simply double-click the downloaded component package.
+
+(And if you don’t have foobar2000 at all, you can download it from the
+[foobar2000 downloads page](https://www.foobar2000.org/windows).)

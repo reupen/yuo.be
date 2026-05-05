@@ -5,6 +5,7 @@
   --font-family: system-ui, sans-serif;
   --max-body-width: 1000px;
 
+  --caption-text-colour: light-dark(#404040, #a9a8a8);
   /*
    Can't use CSS variables inside emulated functions with postcss-preset-env
    https://github.com/csstools/postcss-plugins/issues/1659
@@ -30,6 +31,12 @@
   --text-accent-colour-highlight: light-dark(#b82a00, #ff6900);
   --text-colour: light-dark(#000, #fff);
   --text-colour-muted: light-dark(#151515, #ccc);
+  --code-background: light-dark(#ececec, #121212);
+  --code-caption-background: light-dark(#e9e9e9, #2d353e);
+  --code-caption-text-colour: light-dark(#000, #c6c6c6);
+  --code-text-colour: light-dark(#222, #4cc733);
+  --post-navigation-background: light-dark(#f3f6f9, #2a2a2a);
+  --post-navigation-background-hover: light-dark(#eaedf1, #363636);
   --fa-li-margin: 2rem;
 }
 
@@ -113,18 +120,10 @@ li {
   color: var(--text-colour-muted);
 }
 
-p {
-  margin: 0 0 1rem;
-}
-
 ol,
 ul {
   padding-left: 1.5rem;
   margin: 1rem 0 1rem 0.2rem;
-}
-
-video {
-  margin: 0 0 1rem;
 }
 
 li {
@@ -136,8 +135,34 @@ li {
   }
 }
 
-img {
+img,
+video {
   display: block;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
+  font-size: 16px;
+}
+
+video {
+  margin-bottom: 1.25rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+pre {
+  padding: 0.5rem 0.7rem;
+  line-height: 1.7;
+}
+
+code {
+  font-family: monospace;
+  font-size: 15px;
+}
+
+:not(pre) > code {
+  background: var(--code-background);
+  color: var(--code-text-colour);
+  padding: 0.1rem 0.2rem;
 }

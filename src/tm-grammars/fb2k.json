@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "fb2k",
+  "fileTypes": ["fb2k"],
+  "scopeName": "source.fb2k",
+  "patterns": [
+    {
+      "include": "#main"
+    }
+  ],
+  "repository": {
+    "main": {
+      "patterns": [
+        {
+          "name": "comment",
+          "match": "//.*$"
+        },
+        {
+          "name": "variable",
+          "match": "%[^%]+%"
+        },
+        {
+          "name": "meta.function-call.fb2k",
+          "begin": "(\\$[a-zA-Z0-9_]+)(\\()",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function" },
+            "2": { "name": "punctuation.section.function.begin" }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.function.end" }
+          },
+          "patterns": [
+            {
+              "name": "punctuation.separator.arguments",
+              "match": ","
+            },
+            {
+              "include": "#main"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

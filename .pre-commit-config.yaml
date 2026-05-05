@@ -23,7 +23,7 @@ repos:
         name: eslint
         entry: npm exec --no -- eslint --fix --max-warnings 0 --no-warn-ignored
         language: system
-        files: \.(([cm]?(j|t)s)|astro|mdx)$
+        files: \.([cm]?(j|t)sx?|astro|mdx)$
         exclude: ^src/env\.d\.ts$
       - id: stylelint
         name: stylelint

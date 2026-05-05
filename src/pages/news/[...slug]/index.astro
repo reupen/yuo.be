@@ -1,0 +1,191 @@
+---
+import mdxRenderer from "@astrojs/mdx/server.js"
+import reactRenderer from "@astrojs/react/server.js"
+import { experimental_AstroContainer } from "astro/container"
+import { render } from "astro:content"
+import { format } from "date-fns"
+import { convert as htmlToText } from "html-to-text"
+
+import Layout from "@/layouts/Layout.astro"
+import {
+  CARD_IMAGE_HEIGHT_PX,
+  CARD_IMAGE_WIDTH_PX,
+} from "@/pages/news/[...slug]/card.[ext].ts"
+import { getPosts } from "@/utils"
+
+export async function getStaticPaths() {
+  const posts = await getPosts()
+
+  return posts.map((post, index) => {
+    const previousPost = posts[index - 1]
+    const nextPost = posts[index + 1]
+
+    return {
+      params: {
+        slug: post.id,
+      },
+      props: {
+        post,
+        index,
+        previous: previousPost
+          ? { ...previousPost, url: `/news/${previousPost.id}/` }
+          : undefined,
+        next: nextPost
+          ? { ...nextPost, url: `/news/${nextPost.id}/` }
+          : undefined,
+      },
+    }
+  })
+}
+
+const { next, post, previous } = Astro.props
+
+const { Content } = await render(post)
+
+const container = await experimental_AstroContainer.create()
+container.addServerRenderer({ renderer: mdxRenderer, name: "MDX" })
+container.addServerRenderer({ renderer: reactRenderer, name: "react" })
+
+const postHtml = await container.renderToString(Content)
+const postText = htmlToText(postHtml, { wordwrap: false })
+const readingTime = Math.max(
+  1,
+  Math.round(postText.trim().split(/\s+/).length / 238),
+)
+---
+
+<Layout
+  description={post.data.description || post.data.excerpt}
+  image={{
+    url: new URL(`${Astro.url.pathname}/card.png`, Astro.site),
+    width: CARD_IMAGE_WIDTH_PX,
+    height: CARD_IMAGE_HEIGHT_PX,
+  }}
+  ogPublishedTime={post.data.date}
+  ogType="article"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.data.title,
+    datePublished: post.data.date.toISOString(),
+    author: [
+      {
+        "@type": "Person",
+        name: "Reupen Shah",
+        url: "https://reupen.uk",
+      },
+    ],
+  }}
+  title={post.data.title}
+>
+  <div class="post-header section">
+    <div class="container">
+      <p class="date-reading-time">
+        <time datetime={post.data.date.toISOString()}>
+          {format(post.data.date, "d MMMM yyyy")}
+        </time><span class="bullet"> • </span><span>{readingTime} min read</span
+        >
+      </p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container content">
+      <Content />
+      <div class="prev-next-links no-print">
+        {
+          previous && (
+            <a href={previous.url}>
+              <i aria-hidden="true" class="fa-solid fa-arrow-left" />
+              {previous.data.title}
+            </a>
+          )
+        }
+        {!previous && <span />}
+        {!next && <span />}
+        {
+          next && (
+            <a class="next-page" href={next.url}>
+              {next.data.title}
+              <i aria-hidden="true" class="fa-solid fa-arrow-right" />
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .date-reading-time {
+    font-weight: 500;
+    color: var(--text-colour);
+    margin: 1.25rem 0 1rem;
+  }
+
+  .content {
+    :global(p) {
+      line-height: 1.7;
+    }
+
+    :global(figure),
+    :global(img),
+    :global(video) {
+      margin: 0 0 1rem;
+
+      :global(img),
+      :global(video) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    :global(figcaption) {
+      font-size: 14px;
+      color: var(--caption-text-colour);
+    }
+  }
+
+  .bullet {
+    margin: 0 0.2rem;
+  }
+
+  .prev-next-links {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1.1rem;
+    margin-top: 2rem;
+
+    > span {
+      display: block;
+      visibility: hidden;
+    }
+
+    > a {
+      display: flex;
+      align-items: center;
+      column-gap: 0.55rem;
+      padding: 0.75rem 1rem;
+      line-height: 1.65;
+      background: var(--post-navigation-background);
+      border-radius: 6px;
+
+      @media (min-width: calc(700px + 3rem)) {
+        padding: 1rem;
+      }
+
+      &,
+      i {
+        text-decoration: none;
+      }
+
+      &:hover {
+        background: var(--post-navigation-background-hover);
+        text-decoration: none;
+      }
+    }
+
+    .next-page {
+      justify-content: right;
+      text-align: right;
+    }
+  }
+</style>

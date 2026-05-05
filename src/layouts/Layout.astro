@@ -1,4 +1,7 @@
 ---
+import mime from "mime"
+import type { Article, WithContext } from "schema-dts"
+
 import Menu from "@/components/Menu.astro"
 
 import "./font-awesome.scss"
@@ -6,6 +9,15 @@ import "./globals.pcss"
 
 export interface Props {
   description?: string
+  image?: {
+    url: URL
+    alt?: string
+    width: number
+    height: number
+  }
+  ogPublishedTime?: Date
+  ogType?: string
+  structuredData?: WithContext<Article>
   title: string
 }
 
@@ -13,7 +25,14 @@ const siteTitle = "musicmusic’s foobar2000 stuff"
 const siteDescription =
   "Components for the foobar2000 audio player – including Columns UI and iPod manager"
 const siteAuthor = "musicmusic"
-const { title, description } = Astro.props
+const {
+  title,
+  description,
+  image,
+  ogPublishedTime,
+  ogType = "website",
+  structuredData,
+} = Astro.props
 
 const computedDescription = description || siteDescription
 const computedTitle =
@@ -32,18 +51,49 @@ const computedTitle =
     <meta name="og:title" content={computedTitle} />
     <meta name="og:site_name" content={siteTitle} />
     <meta name="og:description" content={computedDescription} />
-    <meta name="og:type" content="website" />
+    <meta name="og:type" content={ogType} />
+    {
+      ogPublishedTime && (
+        <meta
+          property="article:published_time"
+          content={ogPublishedTime.toISOString()}
+        />
+      )
+    }
+    {
+      image && (
+        <>
+          <meta property="og:image" content={image.url} />
+          <meta
+            property="og:image:type"
+            content={mime.getType(image.url.pathname)}
+          />
+          <meta property="og:image:width" content={image.width.toFixed()} />
+          <meta property="og:image:height" content={image.height.toFixed()} />
+          <meta property="og:image:alt" content={image?.alt ?? title} />
+        </>
+      )
+    }
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content={siteAuthor} />
     <meta name="twitter:title" content={computedTitle} />
     <meta name="twitter:description" content={computedDescription} />
+    {
+      structuredData && (
+        <script
+          is:inline
+          set:html={JSON.stringify(structuredData)}
+          type="application/ld+json"
+        />
+      )
+    }
   </head>
   <body>
-    <main>
-      <div class="menu section">
+    <main class="section">
+      <div class="menu">
         <Menu />
       </div>
-      <div class="content section">
+      <div class="content">
         {title && <h1>{title}</h1>}
         <slot />
       </div>
@@ -66,10 +116,15 @@ const computedTitle =
     padding-top: 0;
   }
 
+  .menu {
+    padding-bottom: 1.5rem;
+  }
+
   @media (min-width: 600px) {
     main {
       display: grid;
       grid-template-columns: fit-content(200px) 1fr;
+      gap: 2rem;
     }
 
     .section,
@@ -77,8 +132,9 @@ const computedTitle =
       padding: 3rem 1rem 2rem;
     }
 
-    .menu.section {
-      padding-top: 3.5rem;
+    .menu {
+      padding-top: 0.5rem;
+      padding-bottom: 0;
     }
   }
 </style>
