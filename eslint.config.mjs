@@ -2,7 +2,7 @@
 
 import eslint from "@eslint/js"
 import eslintPluginAstro from "eslint-plugin-astro"
-import jsxA11y from "eslint-plugin-jsx-a11y"
+import jsxA11y from "eslint-plugin-jsx-a11y-x"
 import perfectionist from "eslint-plugin-perfectionist"
 import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
@@ -22,6 +22,7 @@ export default defineConfig(
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
   eslintPluginAstro.configs.recommended,
+  jsxA11y.configs.recommended,
   {
     plugins: {
       perfectionist,
@@ -63,5 +64,4 @@ export default defineConfig(
       ],
     },
   },
-  jsxA11y.flatConfigs.recommended,
 )
