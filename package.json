@@ -39,7 +39,7 @@
     "eslint-plugin-jsx-a11y-x": "^0.2.0",
     "eslint-plugin-perfectionist": "^5.9.0",
     "globals": "^17.6.0",
-    "postcss-preset-env": "^11.2.0",
+    "postcss-preset-env": "^11.3.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.5",
