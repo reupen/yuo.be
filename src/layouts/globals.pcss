@@ -161,8 +161,22 @@ code {
   font-size: 15px;
 }
 
+h2 code {
+  font-size: 30.5px;
+}
+
 :not(pre) > code {
   background: var(--code-background);
   color: var(--code-text-colour);
   padding: 0.1rem 0.2rem;
+}
+
+.limit-height {
+  max-height: calc(var(--max-body-width) / 1.5);
+  width: auto;
+}
+
+.limit-height-slightly {
+  max-height: calc(var(--max-body-width) / 1.25);
+  width: auto;
 }
