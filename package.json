@@ -32,7 +32,7 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^6.3.3",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
+    "date-fns": "^4.4.0",
     "es-toolkit": "^1.46.1",
     "purgecss": "^8.0.0",
     "react": "^19.2.5",
