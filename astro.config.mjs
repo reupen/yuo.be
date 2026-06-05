@@ -1,3 +1,4 @@
+import { unified } from "@astrojs/markdown-remark"
 import mdx from "@astrojs/mdx"
 import react from "@astrojs/react"
 import playformCompress from "@playform/compress"
@@ -26,14 +27,16 @@ export default defineConfig({
     assets: "_assets",
   },
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          rel: ["noreferrer"],
-        },
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            rel: ["noreferrer"],
+          },
+        ],
       ],
-    ],
+    }),
     shikiConfig: {
       defaultColor: "light-dark()",
       langs: [fb2kTmGrammar],

@@ -23,14 +23,14 @@
     "purgecss": "purgecss --content dist/**/*.html --css dist/**/*.css --preserve-paths -o ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
-    "@astrojs/react": "^5.0.4",
+    "@astrojs/mdx": "^6.0.1",
+    "@astrojs/react": "^5.0.6",
     "@date-fns/tz": "^1.4.1",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@playform/compress": "^0.2.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.3.3",
+    "astro": "^6.4.2",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
     "es-toolkit": "^1.46.1",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/markdown-remark": "^7.2.0",
     "@eslint/js": "^10.0.1",
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^24.12.4",
