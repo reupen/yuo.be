@@ -30,7 +30,7 @@
     "@playform/compress": "^0.2.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.4.2",
+    "astro": "^6.4.8",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
     "es-toolkit": "^1.46.1",
