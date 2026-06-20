@@ -14,7 +14,6 @@
   ],
   "installCommand": "npm install",
   "outputDirectory": "dist",
-  "public": true,
   "redirects": [
     {
       "source": "/wiki",
