@@ -50,7 +50,7 @@
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-jsx-a11y-x": "^0.2.0",
     "eslint-plugin-perfectionist": "^5.9.0",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "html-to-text": "^10.0.0",
     "mime": "^4.1.0",
     "postcss-preset-env": "^11.3.0",
