@@ -28,10 +28,10 @@ export async function getStaticPaths() {
         post,
         index,
         previous: previousPost
-          ? { ...previousPost, url: `/news/${previousPost.id}/` }
+          ? { ...previousPost, url: `/news/${previousPost.id}` }
           : undefined,
         next: nextPost
-          ? { ...nextPost, url: `/news/${nextPost.id}/` }
+          ? { ...nextPost, url: `/news/${nextPost.id}` }
           : undefined,
       },
     }
