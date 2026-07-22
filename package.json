@@ -57,7 +57,7 @@
     "rehype-external-links": "^3.0.0",
     "satori": "^0.26.0",
     "schema-dts": "^2.0.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.3",
     "stylelint": "^17.14.0",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^6.0.3",
@@ -66,6 +66,7 @@
   },
   "overrides": {
     "astro": "$astro",
+    "sharp": "$sharp",
     "typescript": "$typescript"
   }
 }
