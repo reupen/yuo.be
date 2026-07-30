@@ -5,7 +5,7 @@
   --font-family: system-ui, sans-serif;
   --max-body-width: 1000px;
 
-  --caption-text-colour: light-dark(#404040, #a9a8a8);
+  --caption-text-colour: light-dark(#404040, #9f9f9f);
   /*
    Can't use CSS variables inside emulated functions with postcss-preset-env
    https://github.com/csstools/postcss-plugins/issues/1659
@@ -171,6 +171,16 @@ h2 code {
   padding: 0.1rem 0.2rem;
 }
 
+.limit-height-3x {
+  max-height: calc(var(--max-body-width) / 3);
+  width: auto;
+}
+
+.limit-height-1-75x {
+  max-height: calc(var(--max-body-width) / 1.75);
+  width: auto;
+}
+
 .limit-height {
   max-height: calc(var(--max-body-width) / 1.5);
   width: auto;
@@ -179,4 +189,14 @@ h2 code {
 .limit-height-slightly {
   max-height: calc(var(--max-body-width) / 1.25);
   width: auto;
+}
+
+.visually-hidden,
+.sr-only {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
