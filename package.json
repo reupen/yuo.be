@@ -48,7 +48,7 @@
     "eslint-plugin-astro": "^3.0.1",
     "eslint-plugin-jsx-a11y-x": "^0.2.0",
     "eslint-plugin-perfectionist": "^5.10.0",
-    "globals": "^17.7.0",
+    "globals": "^17.8.0",
     "html-to-text": "^10.0.0",
     "mime": "^4.1.0",
     "postcss-preset-env": "^11.3.0",
