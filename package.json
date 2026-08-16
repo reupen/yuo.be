@@ -40,6 +40,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.2.1",
+    "@astrojs/rss": "^4.0.19",
     "@eslint/js": "^10.0.1",
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^24.13.2",

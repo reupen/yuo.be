@@ -23,6 +23,11 @@ const posts = await getPosts()
       ))
     }
   </ol>
+  <p>
+    <a href={new URL("rss.xml", Astro.site)}>
+      <i aria-hidden="true" class="fa-solid fa-rss"></i>&emsp13;RSS
+    </a>
+  </p>
 </Layout>
 
 <style>

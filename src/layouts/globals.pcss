@@ -37,6 +37,8 @@
   --code-text-colour: light-dark(#222, #4cc733);
   --post-navigation-background: light-dark(#f3f6f9, #2a2a2a);
   --post-navigation-background-hover: light-dark(#eaedf1, #363636);
+
+  --fa-width: "auto";
   --fa-li-margin: 2rem;
 }
 
@@ -102,6 +104,12 @@ a {
   text-decoration-line: none;
   text-decoration-thickness: 6%;
   text-underline-offset: 0.2em;
+
+  i {
+    text-decoration-line: inherit;
+    text-decoration-thickness: inherit;
+    text-underline-offset: inherit;
+  }
 
   &,
   :visited {

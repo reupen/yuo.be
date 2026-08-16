@@ -37,14 +37,22 @@ const {
 const computedDescription = description || siteDescription
 const computedTitle =
   title && title !== siteTitle ? `${title} – ${siteTitle}` : siteTitle
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/favicon.ico" rel="icon" sizes="64x64" type="image/x-icon" />
-    <link href="/favicon.svg" rel="icon" sizes="any" type="image/svg+xml" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href={canonicalURL} rel="canonical" />
+    <link
+      href={new URL("rss.xml", Astro.site)}
+      rel="alternate"
+      title={siteTitle}
+      type="application/rss+xml"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{computedTitle}</title>
     <meta name="description" content={computedDescription} />
