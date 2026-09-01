@@ -52,7 +52,7 @@
     "globals": "^17.8.0",
     "html-to-text": "^10.0.0",
     "mime": "^4.1.0",
-    "postcss-preset-env": "^11.3.0",
+    "postcss-preset-env": "^11.5.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-external-links": "^3.0.0",
