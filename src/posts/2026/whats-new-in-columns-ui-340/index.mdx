@@ -6,6 +6,8 @@ excerpt:
   headings and more."
 ---
 
+import { CaptionedVideo } from "@/components"
+
 import smooth_scrolling_mp4 from "./smooth-scrolling.mp4"
 import spectrum_mp4 from "./spectrum.mp4"
 import sticky_group_headings_mp4 from "./sticky-group-headings.mp4"
@@ -30,26 +32,12 @@ playlist switcher, Filter panel, Item details and Item properties panels.
 
 Here’s the new smooth scrolling in action in the playlist view:
 
-{
-
-<figure>
-
-  <video
-    aria-label="A screen recording of the playlist view being scrolled down and up to demonstrate showing smooth scrolling."
-    height="1322"
-    width="2384"
-    controls
-    loop
-    muted
-    playsInline
-  >
-    <source src={smooth_scrolling_mp4} type="video/mp4" />
-  </video>
-  <figcaption>
-    The frame rate of the animation is synchronised with the desktop refresh rate when possible
-  </figcaption>
-</figure>
-}
+<CaptionedVideo
+  aria-label="A screen recording of the playlist view being scrolled down and up to demonstrate showing smooth scrolling."
+  src={smooth_scrolling_mp4}
+  caption="The frame rate of the animation is synchronised with the desktop refresh rate when possible"
+  loop
+/>
 
 Smooth scrolling is disabled by default. It can be enabled using the **Use
 smooth (animated) scrolling** option found at
@@ -64,24 +52,12 @@ high resolutions for complex configurations.)
 In the playlist view, group headings can now be made sticky so that they stay in
 view when scrolling:
 
-{
-
-<figure>
-  <video
-    aria-label="A screen recording of the playlist view being scrolled with the first group heading staying fixed in position while scrolling."
-    height="1322"
-    width="2384"
-    controls
-    loop
-    muted
-    playsInline
-  >
-    <source src={sticky_group_headings_mp4} type="video/mp4" />
-  </video>
-  <figcaption>Sticky group headings work for multi-level groups too</figcaption>
-</figure>
-
-}
+<CaptionedVideo
+  aria-label="A screen recording of the playlist view being scrolled with the first group heading staying fixed in position while scrolling."
+  src={sticky_group_headings_mp4}
+  caption="Sticky group headings work for multi-level groups too"
+  loop
+/>
 
 Sticky group headings can be enabled using the **Keep group headings in view
 when scrolling** option found at
@@ -94,25 +70,11 @@ The built-in spectrum analyser now renders in a background thread and
 synchronises with the Windows desktop refresh rate as closely as possible.
 Here’s the visualisation rendering at just under 60fps on my machine:
 
-{
-
-<figure>
-  <video
-    aria-label="A screen recording of the built-in spectrum analyser visualisation in bars mode."
-    height="218"
-    width="752"
-    controls
-    muted
-    playsInline
-  >
-    <source src={spectrum_mp4} type="video/mp4" />
-  </video>
-  <figcaption>
-    The visualisation is sized larger than it might normally be here
-  </figcaption>
-</figure>
-
-}
+<CaptionedVideo
+  aria-label="A screen recording of the built-in spectrum analyser visualisation in bars mode."
+  src={spectrum_mp4}
+  caption="The visualisation is sized larger than it might normally be here"
+/>
 
 ## The ability to lock the main window size
 

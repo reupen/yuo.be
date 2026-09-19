@@ -6,7 +6,7 @@ excerpt:
   analyser visualisation."
 ---
 
-import { CaptionedImage } from "@/components"
+import { CaptionedImage, CaptionedVideo } from "@/components"
 import { ImageTabs } from "@/components/client"
 
 import artwork_reload_webp from "./artwork-reload.webp"
@@ -29,25 +29,11 @@ released today.
 The playlist view, playlist switcher, Filter panel, Item details and Item
 properties panels all now support auto-scrolling using the middle mouse button:
 
-{
-
-<figure>
-
-  <video
-    aria-label="A screen recording of the autoscroll being used in the playlist view."
-    height="1318"
-    width="2380"
-    controls
-    muted
-    playsInline
-  >
-    <source src={autoscroll_mp4} type="video/mp4" />
-  </video>
-  <figcaption>
-    It works similarly to how it does in Chrome and Firefox
-  </figcaption>
-</figure>
-}
+<CaptionedVideo
+  aria-label="A screen recording of the autoscroll being used in the playlist view."
+  src={autoscroll_mp4}
+  caption="It works similarly to how it does in Chrome and Firefox"
+/>
 
 There are two ways of using autoscroll. You can click the middle button to enter
 autoscroll mode, move the mouse to scroll and then click the middle button again

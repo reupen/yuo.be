@@ -4,7 +4,7 @@ date: 2026-06-01
 excerpt: "This version adds a new search bar built into the playlist view."
 ---
 
-import { CaptionedImage } from "@/components"
+import { CaptionedImage, CaptionedVideo } from "@/components"
 
 import search_bar_mp4 from "./search-bar.mp4"
 import search_bar_prefs_webp from "./search-bar-prefs.webp"
@@ -24,25 +24,11 @@ released today.
 A new search bar has been added to the playlist view, allowing you to quickly
 search the current playlist:
 
-{
-
-<figure>
-
-  <video
-    aria-label="A screen recording of the search bar being used in the playlist view. It shows a search being performed, results being navigated and a result being played."
-    height="1322"
-    width="2384"
-    controls
-    muted
-    playsInline
-  >
-    <source src={search_bar_mp4} type="video/mp4" />
-  </video>
-  <figcaption>
-    The search bar appears at the bottom of the playlist view when opened
-  </figcaption>
-</figure>
-}
+<CaptionedVideo
+  aria-label="A screen recording of the search bar being used in the playlist view. It shows a search being performed, results being navigated and a result being played."
+  src={search_bar_mp4}
+  caption="The search bar appears at the bottom of the playlist view when opened"
+/>
 
 The search bar is essentially a more polished version of
 [Typefind panel](/typefind-panel). It can be opened by pressing Ctrl+F or F3
@@ -143,26 +129,12 @@ panels was changed in new installations so that the panels maintain their
 proportional size. This video shows the old behaviour (top window) and the new
 behaviour (bottom window):
 
-{
-
-<figure>
-
-  <video
-    aria-label="Two screen recordings showing the old and new resizing behaviour of a main window with a layout containing a row with a playlist switcher and a playlist view."
-    height="1728"
-    width="1468"
-    controls
-    muted
-    playsInline
-    className="limit-height-slightly"
-  >
-    <source src={splitter_resize_mp4} type="video/mp4" />
-  </video>
-  <figcaption>
-    With the old behaviour, the playlist switcher here resizes to a zero width
-  </figcaption>
-</figure>
-}
+<CaptionedVideo
+  aria-label="Two screen recordings showing the old and new resizing behaviour of a main window with a layout containing a row with a playlist switcher and a playlist view."
+  src={splitter_resize_mp4}
+  caption="With the old behaviour, the playlist switcher here resizes to a zero width"
+  class="limit-height-slightly"
+/>
 
 This was changed as the old behaviour was unconventional.
 

@@ -1,4 +1,5 @@
 import CaptionedImage from "./CaptionedImage.astro"
+import CaptionedVideo from "./CaptionedVideo.astro"
 import DownloadList from "./DownloadList.astro"
 import DownloadListItem from "./DownloadListItem.astro"
 import ExternalLinkList from "./ExternalLinkList.astro"
@@ -10,6 +11,7 @@ export * from "./SocialCard.tsx"
 
 export {
   CaptionedImage,
+  CaptionedVideo,
   DownloadList,
   DownloadListItem,
   ExternalLinkListItem,

@@ -1,0 +1,45 @@
+---
+import { Input, FilePathSource, ALL_FORMATS } from "mediabunny"
+import { dirname, join } from "node:path"
+
+interface Props {
+  "aria-label": string
+  caption: string
+  class?: string
+  loop?: boolean
+  src: string
+}
+
+const { "aria-label": ariaLabel, caption, src, ...rest } = Astro.props
+
+const cleanedSrc = src.replace(/(\?.*)$/, "")
+const input = new Input({
+  source: new FilePathSource(
+    join(dirname(dirname(import.meta.dirname)), cleanedSrc),
+  ),
+  formats: ALL_FORMATS, // .mp4, .webm, .wav, .m3u8, ...
+})
+
+const mimeType = await input.getMimeType()
+const videoTrack = await input.getPrimaryVideoTrack()
+
+if (!videoTrack) throw new Error(`Invalid video: ${src}`)
+
+const width = await videoTrack.getDisplayWidth()
+const height = await videoTrack.getDisplayHeight()
+---
+
+<figure>
+  <video
+    aria-label={ariaLabel}
+    height={height}
+    width={width}
+    controls
+    muted
+    playsinline
+    {...rest}
+  >
+    <source src={src} type={mimeType} />
+  </video>
+  <figcaption>{caption}</figcaption>
+</figure>
