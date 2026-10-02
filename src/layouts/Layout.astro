@@ -60,41 +60,35 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <meta name="og:site_name" content={siteTitle} />
     <meta name="og:description" content={computedDescription} />
     <meta name="og:type" content={ogType} />
-    {
-      ogPublishedTime && (
+    {ogPublishedTime && (
+      <meta
+        property="article:published_time"
+        content={ogPublishedTime.toISOString()}
+      />
+    )}
+    {image && (
+      <>
+        <meta property="og:image" content={image.url} />
         <meta
-          property="article:published_time"
-          content={ogPublishedTime.toISOString()}
+          property="og:image:type"
+          content={mime.getType(image.url.pathname)}
         />
-      )
-    }
-    {
-      image && (
-        <>
-          <meta property="og:image" content={image.url} />
-          <meta
-            property="og:image:type"
-            content={mime.getType(image.url.pathname)}
-          />
-          <meta property="og:image:width" content={image.width.toFixed()} />
-          <meta property="og:image:height" content={image.height.toFixed()} />
-          <meta property="og:image:alt" content={image?.alt ?? title} />
-        </>
-      )
-    }
+        <meta property="og:image:width" content={image.width.toFixed()} />
+        <meta property="og:image:height" content={image.height.toFixed()} />
+        <meta property="og:image:alt" content={image?.alt ?? title} />
+      </>
+    )}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content={siteAuthor} />
     <meta name="twitter:title" content={computedTitle} />
     <meta name="twitter:description" content={computedDescription} />
-    {
-      structuredData && (
-        <script
-          is:inline
-          set:html={JSON.stringify(structuredData)}
-          type="application/ld+json"
-        />
-      )
-    }
+    {structuredData && (
+      <script
+        is:inline
+        set:html={JSON.stringify(structuredData)}
+        type="application/ld+json"
+      />
+    )}
   </head>
   <body>
     <main class="section">

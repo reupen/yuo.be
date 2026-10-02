@@ -10,13 +10,13 @@ const { path, title } = Astro.props
 ---
 
 <li
-  class={path.startsWith("/") && arePathsEqual(Astro.url.pathname, path)
-    ? "is-active"
-    : ""}
+  class={
+    path.startsWith("/") && arePathsEqual(Astro.url.pathname, path)
+      ? "is-active"
+      : ""
+  }
 >
-  <a href={path}>
-    {title}
-  </a>
+  <a href={path}>{title}</a>
 </li>
 
 <style>
