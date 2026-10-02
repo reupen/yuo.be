@@ -54,7 +54,7 @@
     "mediabunny": "^1.58.1",
     "mime": "^4.1.0",
     "postcss-preset-env": "^11.5.0",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
     "rehype-external-links": "^3.0.0",
     "satori": "^0.26.0",
