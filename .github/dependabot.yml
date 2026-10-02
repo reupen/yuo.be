@@ -37,6 +37,9 @@ updates:
           - "typescript"
           - "typescript-eslint"
     ignore:
+      - dependency-name: typescript
+        versions:
+          - "7.0.x"
       - dependency-name: "@types/node"
         update-types:
           - "version-update:semver-major"
