@@ -16,12 +16,10 @@ const { caption, ...rest } = Astro.props
   <a href={rest.src.src}>
     <PostImage {...rest} />
   </a>
-  {
-    (caption || Astro.slots.has("default")) && (
-      <figcaption>
-        {caption && <span>{caption}</span>}
-        <slot />
-      </figcaption>
-    )
-  }
+  {(caption || Astro.slots.has("default")) && (
+    <figcaption>
+      {caption && <span>{caption}</span>}
+      <slot />
+    </figcaption>
+  )}
 </figure>

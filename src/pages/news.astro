@@ -9,19 +9,17 @@ const posts = await getPosts()
 
 <Layout title="News">
   <ol>
-    {
-      posts.map((post) => (
-        <li id={post.id}>
-          <p class="post-date">
-            <time datetime={post.data.date.toISOString()}>
-              {format(post.data.date, "d MMMM yyyy")}
-            </time>
-          </p>
-          <a href={`/news/${post.id}`}>{post.data.title}</a>
-          <p>{post.data.excerpt}</p>
-        </li>
-      ))
-    }
+    {posts.map((post) => (
+      <li id={post.id}>
+        <p class="post-date">
+          <time datetime={post.data.date.toISOString()}>
+            {format(post.data.date, "d MMMM yyyy")}
+          </time>
+        </p>
+        <a href={`/news/${post.id}`}>{post.data.title}</a>
+        <p>{post.data.excerpt}</p>
+      </li>
+    ))}
   </ol>
   <p>
     <a href={new URL("rss.xml", Astro.site)}>

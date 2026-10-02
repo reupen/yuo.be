@@ -13,5 +13,7 @@ import UnorderedIconList from "@/components/UnorderedIconList.astro"
 ---
 
 <UnorderedIconList>
-  {links.map((link) => <ExternalLinkListItem {...link} />)}
+  {links.map((link) => (
+    <ExternalLinkListItem {...link} />
+  ))}
 </UnorderedIconList>

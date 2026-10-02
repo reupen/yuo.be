@@ -83,8 +83,9 @@ const readingTime = Math.max(
       <p class="date-reading-time">
         <time datetime={post.data.date.toISOString()}>
           {format(post.data.date, "d MMMM yyyy")}
-        </time><span class="bullet"> • </span><span>{readingTime} min read</span
-        >
+        </time>
+        <span class="bullet"> • </span>
+        <span>{readingTime} min read</span>
       </p>
     </div>
   </div>
@@ -92,24 +93,20 @@ const readingTime = Math.max(
     <div class="container content">
       <Content />
       <div class="prev-next-links no-print">
-        {
-          previous && (
-            <a href={previous.url}>
-              <i aria-hidden="true" class="fa-solid fa-arrow-left" />
-              {previous.data.title}
-            </a>
-          )
-        }
+        {previous && (
+          <a href={previous.url}>
+            <i aria-hidden="true" class="fa-solid fa-arrow-left" />
+            {previous.data.title}
+          </a>
+        )}
         {!previous && <span />}
         {!next && <span />}
-        {
-          next && (
-            <a class="next-page" href={next.url}>
-              {next.data.title}
-              <i aria-hidden="true" class="fa-solid fa-arrow-right" />
-            </a>
-          )
-        }
+        {next && (
+          <a class="next-page" href={next.url}>
+            {next.data.title}
+            <i aria-hidden="true" class="fa-solid fa-arrow-right" />
+          </a>
+        )}
       </div>
     </div>
   </div>
