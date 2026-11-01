@@ -55,7 +55,7 @@
     "mime": "^4.1.0",
     "postcss-preset-env": "^11.5.4",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.1.0",
+    "prettier-plugin-astro": "^1.1.2",
     "rehype-external-links": "^3.0.0",
     "satori": "^0.33.5",
     "schema-dts": "^2.0.0",
